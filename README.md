@@ -52,4 +52,4 @@
      => Events Detail View
 
 ## Wireframe
-<img src='prototype.jpeg' title='Wireframe' width=250><br>
+<img src='prototype.jpeg' title='Wireframe' <br>
