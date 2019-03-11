@@ -1,6 +1,4 @@
-# README Template
-
-Your [design product spec](https://hackmd.io/s/H1wGpVUh7) (described in that link) will look like the following in your README:
+# README
 
 ## 1. User Stories (Required and Optional)
 
@@ -25,25 +23,33 @@ Your [design product spec](https://hackmd.io/s/H1wGpVUh7) (described in that lin
 
 ## 2. Screen Archetypes
 
- * Camera View (Snapchat)
+ * Camera View 
+ 	- The user can take a picture of a flyer to be parsed by the app.
  * Image Confirmation View
+ 	- The user is presented with the picture they captured using the camera view. If they feel that the image captured contains all the inofrmation that they wish to inlclude in their calendar event, else they may rescan it.
  * Upcoming Events Screen
+ 	- It shows the user the closet events in their calendar that have been created using the app.
  * Event details screen
-     * After the OCR event
+     - Once the information that event has been parsed, it is displayed to the user so they make some modifcations to the event if they wish to do so.
 
 ## 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
- * Camera
+ * Camera View 
+ 	- The user uses the camera view to take a picture and create an event.
  * Upcoming Events
+ 	- The upcoming events view is where the user would go to view their upcoming events.
  * Manually enter an event (optional)
+ 	-  This can be a view for the users to create events manually using the application via the event detail view.
 
 **Flow Navigation** (Screen to Screen)
 
  * Camera View
-     * Image Confirmation View
-     * Events Detail View
+     => Image Confirmation View
+     => Events Detail View
  * Upcoming Events
-     * Events Detail View
+     => Events Detail View
 
+## Wireframe
+<img src='prototype.jpeg' title='Wireframe' width=250><br>
