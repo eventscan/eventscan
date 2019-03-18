@@ -1,4 +1,11 @@
-# README
+# EventScan
+Use the Captured Image and OCR library to Scan information, and create event on calender base on it.
+   - **Category:** Photo & Calendar
+   - **Mobile:** Uses camera, mobile only experience.
+   - **Story:** Allows users to manage their schedule through pictures.
+   - **Market:** Anyone use camera to store detailed information about the event. 
+   - **Habit:** Users can create event throughout capturing the image or directly entering the information.
+   - **Scope:** Capturing image, scanning the words from the image, manipulate the information, create the event. 
 
 ## 1. User Stories (Required and Optional)
 
