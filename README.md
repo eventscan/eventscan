@@ -88,4 +88,16 @@ Use the Captured Image and OCR library to Scan information, and create event on 
    | invitees          | Array<String> | list of emails of the people the user wants to share the event with.|
    | image             | Image         | The image used to create the event       |
 
+### Networking
+#### List of network requests by screen
 
+ * Camera View 
+ 	- No network calls made.
+ * Image Confirmation View
+ 	- (Write/POST) to ABBY to process the image using submit image/processImage
+ 	- (READ/GET) download processed image from ABBY
+ 	- (Write/POST) end all tasks related to parsing the image on ABBY.
+ * Upcoming Events Screen
+ 	- No network calls made.
+ * Event details screen
+    - No network calls made.
