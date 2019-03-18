@@ -1,4 +1,14 @@
 # EventScan
+
+## Table of Contents
+1. [Overview](#Overview)
+1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
+1. [Schema](#Schema)
+
+
+## Overview
+### Description
 Use the Captured Image and OCR library to Scan information, and create event on calender base on it.
    - **Category:** Photo & Calendar
    - **Mobile:** Uses camera, mobile only experience.
@@ -6,8 +16,9 @@ Use the Captured Image and OCR library to Scan information, and create event on 
    - **Market:** Anyone use camera to store detailed information about the event. 
    - **Habit:** Users can create event throughout capturing the image or directly entering the information.
    - **Scope:** Capturing image, scanning the words from the image, manipulate the information, create the event. 
-
-## 1. User Stories (Required and Optional)
+   
+## Product-Spec
+### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
@@ -28,7 +39,7 @@ Use the Captured Image and OCR library to Scan information, and create event on 
  * Be able to edit the newly scanned event in case the parsing algorithm failed
  * Detail Even View for upcoming events
 
-## 2. Screen Archetypes
+### 2. Screen Archetypes
 
  * Camera View 
  	- The user can take a picture of a flyer to be parsed by the app.
@@ -39,7 +50,7 @@ Use the Captured Image and OCR library to Scan information, and create event on 
  * Event details screen
      - Once the information that event has been parsed, it is displayed to the user so they make some modifcations to the event if they wish to do so.
 
-## 3. Navigation
+### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
