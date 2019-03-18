@@ -72,11 +72,6 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 ## Wireframe
 <img src='prototype.jpeg' title='Wireframe'><br>
 
-### [BONUS] Digital Wireframes & Mockups
-<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
-
-### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
 
 ## Schema 
 ### Models
