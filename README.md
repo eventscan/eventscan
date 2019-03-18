@@ -77,4 +77,15 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 ### Models
 #### Event
 
+   | Property          | Type          | Description                              |
+   | ----------------- | ------------- | -----------------------------------------|
+   | id                | String        | unique id for the image clicked          |
+   | name              | String        | Event name                               |
+   | date              | Date          | Event date                               |
+   | location          | String        | Event location                           |
+   | description       | String        | Event description                        |
+   | alert preferences | Array of Time | alerts for upcoming events               |
+   | invitees          | Array<String> | list of emails of the people the user wants to share the event with.|
+   | image             | Image         | The image used to create the event       |
+
 
