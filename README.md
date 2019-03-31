@@ -55,11 +55,11 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 **Tab Navigation** (Tab to Screen)
 
- * Camera View 
+ - [ ] Camera View 
  	- The user uses the camera view to take a picture and create an event.
- * Upcoming Events
+ - [ ] Upcoming Events
  	- The upcoming events view is where the user would go to view their upcoming events.
- * Manually enter an event (optional)
+ - [ ] Manually enter an event (optional)
  	-  This can be a view for the users to create events manually using the application via the event detail view.
 
 **Flow Navigation** (Screen to Screen)
