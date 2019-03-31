@@ -58,7 +58,7 @@
 		A8A7272F22515CED009FAA2C /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		A8A7273022515CED009FAA2C /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		A8A7273122515CED009FAA2C /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
-		A8A7273222515CED009FAA2C /* EventScan-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EventScan-Bridging-Header.h"; path = "../../../../EventScan/EventScan/EventScan-Bridging-Header.h"; sourceTree = "<group>"; };
+		A8A7273222515CED009FAA2C /* EventScan-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventScan-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8A7273322515CED009FAA2C /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
 		A8A7273422515CED009FAA2C /* mensflyer--2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mensflyer--2.jpg"; sourceTree = "<group>"; };
 		A8A7273522515CED009FAA2C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
