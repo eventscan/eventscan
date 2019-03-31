@@ -34,6 +34,7 @@
 		C24205CF224058B20065C5DB /* EventScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205CE224058B20065C5DB /* EventScanTests.swift */; };
 		C24205DA224058B30065C5DB /* EventScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205D9224058B30065C5DB /* EventScanUITests.swift */; };
 		C2D5487422515087005F755A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5487322515087005F755A /* DetailViewController.swift */; };
+		C2D5487822516758005F755A /* EventInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5487722516758005F755A /* EventInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		C24205D9224058B30065C5DB /* EventScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScanUITests.swift; sourceTree = "<group>"; };
 		C24205DB224058B30065C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D5487322515087005F755A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C2D5487722516758005F755A /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				859A692222514C4C0096C20F /* Detail.storyboard */,
 				C2D5487322515087005F755A /* DetailViewController.swift */,
 				A8A7272B22515CD9009FAA2C /* Abby Workflow */,
+				C2D5487722516758005F755A /* EventInfo.swift */,
 			);
 			path = EventScan;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				A8A7275122515CEE009FAA2C /* PhotoHelper.swift in Sources */,
 				5E81588F2251645700D9D583 /* CameraViewController.swift in Sources */,
 				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
+				C2D5487822516758005F755A /* EventInfo.swift in Sources */,
 				A8A7274E22515CEE009FAA2C /* ProcessingOperation.m in Sources */,
 				C24205BC224058B00065C5DB /* ViewController.swift in Sources */,
 				A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */,

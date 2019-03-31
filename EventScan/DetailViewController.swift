@@ -18,7 +18,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var event_details: UITextView!
     var alert_picker_display_data: [String] = [String]()
     var selected_index = 1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert_picker.delegate = self
@@ -32,8 +31,15 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     @IBAction func confirm_button(_ sender: Any) {
         // TO DO: Add the info to the lsit
+        var events = UserDefaults.standard.object(forKey: "event_info")
+        if events == nil {
+            events = Array<EventInfo>()
+        }
         
-        UserDefaults.standard.set(location.text, forKey: "location")
+        
+        
+        // add new event to the events
+        UserDefaults.standard.set(events, forKey: "event_info")
         tabBarController?.selectedIndex = 1
     }
     
@@ -56,6 +62,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected_index = row
     }
-
-
+    
+    
 }
