@@ -21,15 +21,16 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+#### Status
 
-- [0] Display upcoming events    
-- [0] Scan flyers
-- [0] Be able to view the camera
-- [0] Be able to use OCR
-- [0] Take the picture first and then process the information 
-- [0] Add the event to the user's calender app
-- [0] Ask for alert preferences for the event
-- [0] Be able to verify the event before adding it to the calender.
+- [ ] Display upcoming events    
+- [ ] Scan flyers
+- [ ] Be able to view the camera
+- [ ] Be able to use OCR
+- [ ] Take the picture first and then process the information 
+- [ ] Add the event to the user's calender app
+- [ ] Ask for alert preferences for the event
+- [ ] Be able to verify the event before adding it to the calender.
 
 **Optional Nice-to-have Stories**
 
