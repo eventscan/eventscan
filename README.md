@@ -64,10 +64,10 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 **Flow Navigation** (Screen to Screen)
 
- * Camera View
+- [ ] Camera View
      => Image Confirmation View
      => Events Detail View
- * Upcoming Events
+- [ ] Upcoming Events
      => Events Detail View
 
 ## Wireframe
