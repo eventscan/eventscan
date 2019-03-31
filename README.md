@@ -24,9 +24,9 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 #### Status
 
 - [ ] Display upcoming events    
-- [ ] Scan flyers
+- [X] Scan flyers
 - [ ] Be able to view the camera
-- [ ] Be able to use OCR
+- [X] Be able to use OCR
 - [ ] Take the picture first and then process the information 
 - [ ] Add the event to the user's calender app
 - [ ] Ask for alert preferences for the event
@@ -34,21 +34,21 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 **Optional Nice-to-have Stories**
 
- * User Onboarding 
- * Ability to invite other users to the scanned event
- * Setup default alert times  i.e "At time of event" 
- * Be able to edit the newly scanned event in case the parsing algorithm failed
- * Detail Even View for upcoming events
+- [ ] User Onboarding 
+- [ ] Ability to invite other users to the scanned event
+- [ ] Setup default alert times  i.e "At time of event" 
+- [ ] Be able to edit the newly scanned event in case the parsing algorithm failed
+- [ ] Detail Even View for upcoming events
 
 ### 2. Screen Archetypes
 
- * Camera View 
+- [ ] Camera View 
  	- The user can take a picture of a flyer to be parsed by the app.
- * Image Confirmation View
+- [ ] Image Confirmation View
  	- The user is presented with the picture they captured using the camera view. If they feel that the image captured contains all the inofrmation that they wish to inlclude in their calendar event, else they may rescan it.
- * Upcoming Events Screen
+- [ ] Upcoming Events Screen
  	- It shows the user the closet events in their calendar that have been created using the app.
- * Event details screen
+- [ ] Event details screen
      - Once the information that event has been parsed, it is displayed to the user so they make some modifcations to the event if they wish to do so.
 
 ### 3. Navigation
