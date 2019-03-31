@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		859A692422514C4C0096C20F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859A692222514C4C0096C20F /* Detail.storyboard */; };
 		C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205B9224058B00065C5DB /* AppDelegate.swift */; };
 		C24205BC224058B00065C5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205BB224058B00065C5DB /* ViewController.swift */; };
 		C24205BF224058B00065C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24205BD224058B00065C5DB /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		859A692322514C4C0096C20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EventScan/Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
 		C24205B6224058B00065C5DB /* EventScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24205B9224058B00065C5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C24205BB224058B00065C5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		C24205AD224058B00065C5DB = {
 			isa = PBXGroup;
 			children = (
+				859A692222514C4C0096C20F /* Detail.storyboard */,
 				C24205B8224058B00065C5DB /* EventScan */,
 				C24205CD224058B20065C5DB /* EventScanTests */,
 				C24205D8224058B30065C5DB /* EventScanUITests */,
@@ -232,6 +235,7 @@
 				C24205C4224058B20065C5DB /* LaunchScreen.storyboard in Resources */,
 				C24205C1224058B20065C5DB /* Assets.xcassets in Resources */,
 				C24205BF224058B00065C5DB /* Main.storyboard in Resources */,
+				859A692422514C4C0096C20F /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		859A692222514C4C0096C20F /* Detail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				859A692322514C4C0096C20F /* Base */,
+			);
+			name = Detail.storyboard;
+			sourceTree = "<group>";
+		};
 		C24205BD224058B00065C5DB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
