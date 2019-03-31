@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		859A692422514C4C0096C20F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859A692222514C4C0096C20F /* Detail.storyboard */; };
+		A8A7274622515CEE009FAA2C /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272E22515CED009FAA2C /* image.png */; };
+		A8A7274722515CEE009FAA2C /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272F22515CED009FAA2C /* image3.png */; };
+		A8A7274822515CEE009FAA2C /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273122515CED009FAA2C /* Client.m */; };
+		A8A7274922515CEE009FAA2C /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7273322515CED009FAA2C /* image4.png */; };
+		A8A7274A22515CEE009FAA2C /* mensflyer--2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8A7273422515CED009FAA2C /* mensflyer--2.jpg */; };
+		A8A7274B22515CEE009FAA2C /* image6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8A7273622515CED009FAA2C /* image6.jpg */; };
+		A8A7274C22515CEE009FAA2C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273722515CED009FAA2C /* NSData+Base64.m */; };
+		A8A7274D22515CEE009FAA2C /* HTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273922515CED009FAA2C /* HTTPOperation.m */; };
+		A8A7274E22515CEE009FAA2C /* ProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273B22515CED009FAA2C /* ProcessingOperation.m */; };
+		A8A7274F22515CEE009FAA2C /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8A7273C22515CED009FAA2C /* sample.jpg */; };
+		A8A7275022515CEE009FAA2C /* ABBYHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273D22515CEE009FAA2C /* ABBYHelper.swift */; };
+		A8A7275122515CEE009FAA2C /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273F22515CEE009FAA2C /* PhotoHelper.swift */; };
+		A8A7275222515CEE009FAA2C /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8A7274122515CEE009FAA2C /* image2.jpg */; };
+		A8A7275322515CEE009FAA2C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274222515CEE009FAA2C /* Task.m */; };
+		A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274322515CEE009FAA2C /* NSString+Base64.m */; };
+		A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274422515CEE009FAA2C /* ProcessingParams.m */; };
 		C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205B9224058B00065C5DB /* AppDelegate.swift */; };
 		C24205BC224058B00065C5DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205BB224058B00065C5DB /* ViewController.swift */; };
 		C24205BF224058B00065C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24205BD224058B00065C5DB /* Main.storyboard */; };
@@ -37,6 +53,31 @@
 
 /* Begin PBXFileReference section */
 		859A692322514C4C0096C20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EventScan/Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
+		A8A7272D22515CED009FAA2C /* OcrSdkDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OcrSdkDemo-Prefix.pch"; sourceTree = "<group>"; };
+		A8A7272E22515CED009FAA2C /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		A8A7272F22515CED009FAA2C /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		A8A7273022515CED009FAA2C /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		A8A7273122515CED009FAA2C /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		A8A7273222515CED009FAA2C /* EventScan-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "EventScan-Bridging-Header.h"; path = "../../../../EventScan/EventScan/EventScan-Bridging-Header.h"; sourceTree = "<group>"; };
+		A8A7273322515CED009FAA2C /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		A8A7273422515CED009FAA2C /* mensflyer--2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mensflyer--2.jpg"; sourceTree = "<group>"; };
+		A8A7273522515CED009FAA2C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A8A7273622515CED009FAA2C /* image6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image6.jpg; sourceTree = "<group>"; };
+		A8A7273722515CED009FAA2C /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		A8A7273822515CED009FAA2C /* ProcessingParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingParams.h; sourceTree = "<group>"; };
+		A8A7273922515CED009FAA2C /* HTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPOperation.m; sourceTree = "<group>"; };
+		A8A7273A22515CED009FAA2C /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		A8A7273B22515CED009FAA2C /* ProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingOperation.m; sourceTree = "<group>"; };
+		A8A7273C22515CED009FAA2C /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		A8A7273D22515CEE009FAA2C /* ABBYHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABBYHelper.swift; sourceTree = "<group>"; };
+		A8A7273E22515CEE009FAA2C /* ProcessingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingOperation.h; sourceTree = "<group>"; };
+		A8A7273F22515CEE009FAA2C /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
+		A8A7274022515CEE009FAA2C /* HTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPOperation.h; sourceTree = "<group>"; };
+		A8A7274122515CEE009FAA2C /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		A8A7274222515CEE009FAA2C /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		A8A7274322515CEE009FAA2C /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		A8A7274422515CEE009FAA2C /* ProcessingParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingParams.m; sourceTree = "<group>"; };
+		A8A7274522515CEE009FAA2C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		C24205B6224058B00065C5DB /* EventScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24205B9224058B00065C5DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C24205BB224058B00065C5DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +119,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8A7272B22515CD9009FAA2C /* Abby Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				A8A7273022515CED009FAA2C /* Client.h */,
+				A8A7273122515CED009FAA2C /* Client.m */,
+				A8A7273222515CED009FAA2C /* EventScan-Bridging-Header.h */,
+				A8A7274022515CEE009FAA2C /* HTTPOperation.h */,
+				A8A7273922515CED009FAA2C /* HTTPOperation.m */,
+				A8A7272E22515CED009FAA2C /* image.png */,
+				A8A7274122515CEE009FAA2C /* image2.jpg */,
+				A8A7272F22515CED009FAA2C /* image3.png */,
+				A8A7273322515CED009FAA2C /* image4.png */,
+				A8A7273622515CED009FAA2C /* image6.jpg */,
+				A8A7273422515CED009FAA2C /* mensflyer--2.jpg */,
+				A8A7273522515CED009FAA2C /* NSData+Base64.h */,
+				A8A7273722515CED009FAA2C /* NSData+Base64.m */,
+				A8A7273A22515CED009FAA2C /* NSString+Base64.h */,
+				A8A7274322515CEE009FAA2C /* NSString+Base64.m */,
+				A8A7272D22515CED009FAA2C /* OcrSdkDemo-Prefix.pch */,
+				A8A7273F22515CEE009FAA2C /* PhotoHelper.swift */,
+				A8A7273E22515CEE009FAA2C /* ProcessingOperation.h */,
+				A8A7273B22515CED009FAA2C /* ProcessingOperation.m */,
+				A8A7273822515CED009FAA2C /* ProcessingParams.h */,
+				A8A7274422515CEE009FAA2C /* ProcessingParams.m */,
+				A8A7273C22515CED009FAA2C /* sample.jpg */,
+				A8A7274522515CEE009FAA2C /* Task.h */,
+				A8A7274222515CEE009FAA2C /* Task.m */,
+				A8A7273D22515CEE009FAA2C /* ABBYHelper.swift */,
+			);
+			path = "Abby Workflow";
+			sourceTree = "<group>";
+		};
 		C24205AD224058B00065C5DB = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +182,7 @@
 				C24205C5224058B20065C5DB /* Info.plist */,
 				859A692222514C4C0096C20F /* Detail.storyboard */,
 				C2D5487322515087005F755A /* DetailViewController.swift */,
+				A8A7272B22515CD9009FAA2C /* Abby Workflow */,
 			);
 			path = EventScan;
 			sourceTree = "<group>";
@@ -199,6 +273,7 @@
 				TargetAttributes = {
 					C24205B5224058B00065C5DB = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					C24205C9224058B20065C5DB = {
 						CreatedOnToolsVersion = 10.1;
@@ -235,10 +310,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A7275222515CEE009FAA2C /* image2.jpg in Resources */,
+				A8A7274A22515CEE009FAA2C /* mensflyer--2.jpg in Resources */,
 				C24205C4224058B20065C5DB /* LaunchScreen.storyboard in Resources */,
+				A8A7274722515CEE009FAA2C /* image3.png in Resources */,
 				C24205C1224058B20065C5DB /* Assets.xcassets in Resources */,
 				C24205BF224058B00065C5DB /* Main.storyboard in Resources */,
+				A8A7274922515CEE009FAA2C /* image4.png in Resources */,
+				A8A7274B22515CEE009FAA2C /* image6.jpg in Resources */,
 				859A692422514C4C0096C20F /* Detail.storyboard in Resources */,
+				A8A7274622515CEE009FAA2C /* image.png in Resources */,
+				A8A7274F22515CEE009FAA2C /* sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +345,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A7275322515CEE009FAA2C /* Task.m in Sources */,
+				A8A7275022515CEE009FAA2C /* ABBYHelper.swift in Sources */,
+				A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */,
+				A8A7275122515CEE009FAA2C /* PhotoHelper.swift in Sources */,
 				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
+				A8A7274E22515CEE009FAA2C /* ProcessingOperation.m in Sources */,
 				C24205BC224058B00065C5DB /* ViewController.swift in Sources */,
+				A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */,
+				A8A7274C22515CEE009FAA2C /* NSData+Base64.m in Sources */,
+				A8A7274D22515CEE009FAA2C /* HTTPOperation.m in Sources */,
+				A8A7274822515CEE009FAA2C /* Client.m in Sources */,
 				C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,6 +548,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eventScan.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +568,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eventScan.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
