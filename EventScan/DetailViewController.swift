@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var event_name: UITextField!
-    @IBOutlet weak var location: NSLayoutConstraint!
+    @IBOutlet weak var location: UITextField!
     @IBOutlet weak var date_picker: UIDatePicker!
     @IBOutlet weak var time_picker: UIDatePicker!
     @IBOutlet weak var alert_picker: UIPickerView!
@@ -32,6 +32,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     @IBAction func confirm_button(_ sender: Any) {
         // TO DO: Add the info to the lsit
+        
+        UserDefaults.standard.set(location.text, forKey: "location")
         tabBarController?.selectedIndex = 1
     }
     
