@@ -15,6 +15,7 @@
 		C24205C4224058B20065C5DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24205C2224058B20065C5DB /* LaunchScreen.storyboard */; };
 		C24205CF224058B20065C5DB /* EventScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205CE224058B20065C5DB /* EventScanTests.swift */; };
 		C24205DA224058B30065C5DB /* EventScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205D9224058B30065C5DB /* EventScanUITests.swift */; };
+		C2D5487422515087005F755A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5487322515087005F755A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C24205D5224058B20065C5DB /* EventScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24205D9224058B30065C5DB /* EventScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScanUITests.swift; sourceTree = "<group>"; };
 		C24205DB224058B30065C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D5487322515087005F755A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,6 @@
 		C24205AD224058B00065C5DB = {
 			isa = PBXGroup;
 			children = (
-				859A692222514C4C0096C20F /* Detail.storyboard */,
 				C24205B8224058B00065C5DB /* EventScan */,
 				C24205CD224058B20065C5DB /* EventScanTests */,
 				C24205D8224058B30065C5DB /* EventScanUITests */,
@@ -106,6 +107,8 @@
 				C24205C0224058B20065C5DB /* Assets.xcassets */,
 				C24205C2224058B20065C5DB /* LaunchScreen.storyboard */,
 				C24205C5224058B20065C5DB /* Info.plist */,
+				859A692222514C4C0096C20F /* Detail.storyboard */,
+				C2D5487322515087005F755A /* DetailViewController.swift */,
 			);
 			path = EventScan;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
 				C24205BC224058B00065C5DB /* ViewController.swift in Sources */,
 				C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */,
 			);
