@@ -57,7 +57,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             print("Failed saving")
         }
         tabBarController?.selectedIndex = 1
-        
+        event_name.text = ""
+        location.text = ""
+        date_picker.date = Date()
+        time_picker.date = Date()
+        alert_picker.selectRow(1, inComponent: 0, animated: true)
+        selected_index = 1
+        event_details.text = ""
         
         //reading
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
