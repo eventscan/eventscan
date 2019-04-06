@@ -14,18 +14,16 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let abbyHelper = ABBYHelper()
         let image = UIImage(named: "testImage2.jpg")!
         
-        
-        abbyHelper.completion = { (text) in
-            guard let text = text else {return}
+        VisionHelper.parseTextFrom(image: image) { (text) in
+            guard let text = text else {
+                //TODO: present error
+                return}
             let parser = Parser()
+            
             parser.parse(text: text)
         }
-        
-        
-        abbyHelper.parse(image: image)
         
     }
 

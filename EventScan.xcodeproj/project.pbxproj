@@ -19,6 +19,7 @@
 		A8431EAF22530F6700B33383 /* timeModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8431EAD22530F6700B33383 /* timeModel.mlmodel */; };
 		A8431EB022530F6700B33383 /* AddressModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8431EAE22530F6700B33383 /* AddressModel.mlmodel */; };
 		A87CE7BE22595D6E0050AFCB /* VisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */; };
+		A87CE7C0225966E10050AFCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87CE7BF225966E10050AFCB /* GoogleService-Info.plist */; };
 		A8A7274622515CEE009FAA2C /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272E22515CED009FAA2C /* image.png */; };
 		A8A7274722515CEE009FAA2C /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272F22515CED009FAA2C /* image3.png */; };
 		A8A7274822515CEE009FAA2C /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273122515CED009FAA2C /* Client.m */; };
@@ -78,6 +79,7 @@
 		A8431EAD22530F6700B33383 /* timeModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = timeModel.mlmodel; sourceTree = "<group>"; };
 		A8431EAE22530F6700B33383 /* AddressModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AddressModel.mlmodel; sourceTree = "<group>"; };
 		A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionHelper.swift; sourceTree = "<group>"; };
+		A87CE7BF225966E10050AFCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8A7272D22515CED009FAA2C /* OcrSdkDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OcrSdkDemo-Prefix.pch"; sourceTree = "<group>"; };
 		A8A7272E22515CED009FAA2C /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		A8A7272F22515CED009FAA2C /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 		C24205DB224058B30065C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28DCA702255660400F609D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2D5487322515087005F755A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		C2D5487722516758005F755A /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		C99DCC90011A5D76246CB50F /* Pods_EventScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9057CFF78EB08EFCCCEF2C2 /* Pods-EventScanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventScanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventScanUITests/Pods-EventScanUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,6 +236,7 @@
 		C24205B8224058B00065C5DB /* EventScan */ = {
 			isa = PBXGroup;
 			children = (
+				A87CE7BF225966E10050AFCB /* GoogleService-Info.plist */,
 				C24205B9224058B00065C5DB /* AppDelegate.swift */,
 				C24205BB224058B00065C5DB /* HomeViewController.swift */,
 				5E8158902251647D00D9D583 /* Camera.storyboard */,
@@ -401,6 +403,7 @@
 				859A692422514C4C0096C20F /* Detail.storyboard in Resources */,
 				A8A7274622515CEE009FAA2C /* image.png in Resources */,
 				A8A7274F22515CEE009FAA2C /* sample.jpg in Resources */,
+				A87CE7C0225966E10050AFCB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
