@@ -28,6 +28,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func cancel_button(_ sender: Any) {
+        event_name.text = ""
+        location.text = ""
+        date_picker.date = Date()
+        time_picker.date = Date()
+        alert_picker.selectRow(1, inComponent: 0, animated: true)
+        selected_index = 1
+        event_details.text = ""
         tabBarController?.selectedIndex = 0
     }
     @IBAction func confirm_button(_ sender: Any) {
