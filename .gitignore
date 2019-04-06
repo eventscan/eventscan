@@ -80,4 +80,5 @@ lint/reports/
 
 #Xcode files
 #
+EventScan.xcodeproj/xcuserdata/AbidsMac.xcuserdatad/xcdebugger/
 EventScan.xcodeproj/project.pbxproj
