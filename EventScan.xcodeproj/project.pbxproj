@@ -122,12 +122,9 @@
 		C24205DB224058B30065C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28DCA702255660400F609D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2D5487322515087005F755A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		C2D5487722516758005F755A /* EventInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfo.swift; sourceTree = "<group>"; };
 		C99DCC90011A5D76246CB50F /* Pods_EventScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9057CFF78EB08EFCCCEF2C2 /* Pods-EventScanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventScanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventScanUITests/Pods-EventScanUITests.release.xcconfig"; sourceTree = "<group>"; };
-=======
->>>>>>> 4a1ad285f2f07f86c96cfd666f9a2f03fb4ee235
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
