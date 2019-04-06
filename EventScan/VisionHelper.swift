@@ -10,25 +10,23 @@ import UIKit
 import Firebase
 import FirebaseMLCommon
 
-struct VisionHelpe {
+struct VisionHelper {
     
-    static func parseTextFrom(image: UIImage) -> String? {
-        super.viewDidLoad()
+    static func parseTextFrom(image: UIImage, completion: @escaping (String?) -> Void) {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
-        let visionImage = VisionImage(image: image!)
+        let visionImage = VisionImage(image: image)
         
         textRecognizer.process(visionImage) { result, error in
             guard error == nil, let result = result else {
-                // ...
-                print(error?.localizedDescription)
-                return nil
+                print(error!.localizedDescription)
+                completion(nil)
+                return
             }
             
             // Recognized text
-            let resultText = result.text
             print(result.text)
-            return result.text
+            completion(result.text)
         }
     }
     
