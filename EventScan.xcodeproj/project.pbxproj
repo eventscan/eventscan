@@ -553,11 +553,8 @@
 				A8D8AB202252C6E300260FA8 /* Parser.swift in Sources */,
 				A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */,
 				A8A7275122515CEE009FAA2C /* PhotoHelper.swift in Sources */,
-<<<<<<< HEAD
 				A87CE7BE22595D6E0050AFCB /* VisionHelper.swift in Sources */,
-=======
 				C28DCA712255660400F609D5 /* Model.xcdatamodeld in Sources */,
->>>>>>> 4a1ad285f2f07f86c96cfd666f9a2f03fb4ee235
 				5E81588F2251645700D9D583 /* CameraViewController.swift in Sources */,
 				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
 				A8431EB022530F6700B33383 /* AddressModel.mlmodel in Sources */,
