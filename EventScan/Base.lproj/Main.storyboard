@@ -21,8 +21,8 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="TD6-0o-b1s" kind="relationship" relationship="viewControllers" id="wUI-gi-BV2"/>
                         <segue destination="tm9-UO-khF" kind="relationship" relationship="viewControllers" id="3Js-6q-q7K"/>
+                        <segue destination="TD6-0o-b1s" kind="relationship" relationship="viewControllers" id="wUI-gi-BV2"/>
                         <segue destination="7kR-z6-eLv" kind="relationship" relationship="viewControllers" id="n2k-CS-OPT"/>
                     </connections>
                 </tabBarController>

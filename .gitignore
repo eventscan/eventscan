@@ -77,3 +77,7 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 lint/reports/
+
+#Xcode files
+#
+EventScan.xcodeproj/project.pbxproj

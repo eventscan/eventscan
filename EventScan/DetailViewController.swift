@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -27,20 +28,52 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     @IBAction func cancel_button(_ sender: Any) {
+        event_name.text = ""
+        location.text = ""
+        date_picker.date = Date()
+        time_picker.date = Date()
+        alert_picker.selectRow(1, inComponent: 0, animated: true)
+        selected_index = 1
+        event_details.text = ""
         tabBarController?.selectedIndex = 0
     }
     @IBAction func confirm_button(_ sender: Any) {
         // TO DO: Add the info to the lsit
-        var events = UserDefaults.standard.object(forKey: "event_info")
-        if events == nil {
-            events = Array<EventInfo>()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
+        //create new
+        let newEventInfo = NSManagedObject(entity: entity!, insertInto: context)
+        newEventInfo.setValue(event_name.text, forKey: "event_name")
+        newEventInfo.setValue(location.text, forKey: "location")
+        newEventInfo.setValue(date_picker.date, forKey: "date")
+        newEventInfo.setValue(time_picker.date, forKey: "time")
+        newEventInfo.setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
+        newEventInfo.setValue(event_details.text, forKey: "details")
+        //saving
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving")
+        }
+        tabBarController?.selectedIndex = 1
+        
+        
+        //reading
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            print("loading data")
+            for data in result as! [NSManagedObject] {
+                print(data.value(forKey: "event_name") as! String)
+            }
+            
+        } catch {
+            print("Failed")
         }
         
         
-        
-        // add new event to the events
-        UserDefaults.standard.set(events, forKey: "event_info")
-        tabBarController?.selectedIndex = 1
     }
     
     override func didReceiveMemoryWarning() {
