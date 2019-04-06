@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import CoreML
 
 class Parser {
-    
+    let addressModel = AddressModel()
+
     var keywordMap: [String: String]
     
     init() {
@@ -23,7 +25,43 @@ class Parser {
         
         let words = text.split(separator: " ")
         
+        
+        var i = 0
+        
+        var addressFound = false
+        var lastFoundAddress = ""
+        
+        
+        while (!addressFound && i < words.count) {
+            
+            var check = words.first!
+            if (words.count > 0) {
+                
+                check = ""
+                for j in 0...i {
+                    check += " " + words[j]
+                }
+            }
+            predictionSentiment(from: String(check))
+            
+            
+           i += 1
+            
+            
+        }
+        
+        
     }
+    
+    func predictionSentiment(from sentence:String) -> Double {
+        if let prediction = try? addressModel.prediction(text: sentence) {
+            print(prediction.label)
+        }
+        
+        return 0
+    }
+    
+    
     
     
     

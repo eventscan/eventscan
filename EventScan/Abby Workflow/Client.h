@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSString* password;
 
 
-@property (assign) id<ClientDelegate> delegate;
+@property (strong, nonatomic) id<ClientDelegate> delegate;
 
 - (id)initWithApplicationID:(NSString*)applicationID password:(NSString*)password;
 
