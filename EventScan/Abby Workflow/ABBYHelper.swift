@@ -16,10 +16,12 @@ class ABBYHelper: NSObject {
     var completion: ((String?) -> Void)?
 
     func parse(image: UIImage) {
-        let image = UIImage(named: "image6.jpg")
         guard let client = Client(applicationID: applicationID, password: password) else {return}
-        client.delegate = self
-        client.processImage(image, with: ProcessingParams())
+        DispatchQueue.main.async {
+            client.delegate = self
+            client.processImage(image, with: ProcessingParams())
+        }
+        
     }
     
 }
