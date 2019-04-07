@@ -16,12 +16,13 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
     }
     
-    @IBAction func takeAPictureButton(_ sender: UIButton) {
+    @IBAction func TakeAVPictureButton(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerController.SourceType.camera
         self.present(image, animated: true)
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
