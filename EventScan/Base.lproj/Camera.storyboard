@@ -24,7 +24,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-91-p93">
                                 <rect key="frame" x="150" y="560" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Capture.png"/>
+                                <state key="normal" backgroundImage="Capture.png"/>
                                 <connections>
                                     <action selector="TakeAVPictureButton:" destination="VFa-Mw-WUj" eventType="touchUpInside" id="obB-uT-4yh"/>
                                 </connections>
