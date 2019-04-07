@@ -74,14 +74,27 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 print("loading data")
                 
                 //update by index
-                let events = result as! [NSManagedObject]
+                var events = result as! [NSManagedObject]
                 print(events[0].value(forKey: "event_name") as! String)
                 events[0].setValue("update", forKey: "event_name")
+                
+                //try remove the last element
+                context.delete(events[events.count - 1])
+                //save
                 do {
                     try context.save()
                 } catch {
                     print("Failed saving")
                 }
+                
+            } catch {
+                print("Failed")
+            }
+            //reading
+            do {
+                let result = try context.fetch(request)
+                print("loading data")
+                
                 //read data by each object
                 for data in result as! [NSManagedObject] {
                     print(data.value(forKey: "event_name") as! String)
