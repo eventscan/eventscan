@@ -21,9 +21,9 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tm9-UO-khF" kind="relationship" relationship="viewControllers" id="3Js-6q-q7K"/>
-                        <segue destination="TD6-0o-b1s" kind="relationship" relationship="viewControllers" id="wUI-gi-BV2"/>
                         <segue destination="7kR-z6-eLv" kind="relationship" relationship="viewControllers" id="n2k-CS-OPT"/>
+                        <segue destination="TD6-0o-b1s" kind="relationship" relationship="viewControllers" id="wUI-gi-BV2"/>
+                        <segue destination="tm9-UO-khF" kind="relationship" relationship="viewControllers" id="3Js-6q-q7K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vr8-ul-QFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -43,7 +43,7 @@
         <!--List-->
         <scene sceneID="vof-w8-NZV">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-TD6-0o-b1s" id="TD6-0o-b1s" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-TD6-0o-b1s" id="TD6-0o-b1s" customClass="ListViewController" customModule="EventScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uPA-In-STq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

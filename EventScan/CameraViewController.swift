@@ -15,12 +15,12 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidLoad() {
         TakeAVPictureButton(self)
     }
-    /* override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        if (imageScreen.image == nil) {
+        if (UserDefaults.standard.bool(forKey: "view_diff") == nil || UserDefaults.standard.bool(forKey: "view_diff") == true) {
         TakeAVPictureButton(self)
         }
-    } */
+    }
     
     
     @IBAction func TakeAVPictureButton(_ sender: Any) {
@@ -28,6 +28,9 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         image.delegate = self
         image.sourceType = UIImagePickerController.SourceType.camera
         self.present(image, animated: true)
+        
+        UserDefaults.standard.set(false, forKey: "view_diff")
+        
     }
     
     

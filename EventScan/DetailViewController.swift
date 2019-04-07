@@ -26,7 +26,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         alert_picker_display_data = ["10 minute","5 minute","15 minute","Never"]
         alert_picker.selectRow(selected_index, inComponent: 0, animated: true)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        UserDefaults.standard.set(true, forKey: "view_diff")
+    }
     @IBAction func cancel_button(_ sender: Any) {
         event_name.text = ""
         location.text = ""
