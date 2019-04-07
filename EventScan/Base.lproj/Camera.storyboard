@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFa-Mw-WUj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFa-Mw-WUj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,27 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-bz-FCD" customClass="camera_image">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-91-p93">
                                 <rect key="frame" x="150" y="560" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Capture.png"/>
+                                <connections>
+                                    <action selector="takeAPictureButton:" destination="VFa-Mw-WUj" eventType="touchUpInside" id="H5u-79-Rrp"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-rg-PF9">
+                                <rect key="frame" x="16" y="44" width="343" height="468"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3Mo-HU-UW8" firstAttribute="top" secondItem="Slc-bz-FCD" secondAttribute="top" constant="20" id="Nsl-rF-rWL"/>
-                            <constraint firstItem="Slc-bz-FCD" firstAttribute="leading" secondItem="3Mo-HU-UW8" secondAttribute="leading" id="k7d-cL-8sD"/>
-                            <constraint firstItem="Slc-bz-FCD" firstAttribute="width" secondItem="sjG-EB-eXQ" secondAttribute="width" id="ojN-Ot-AW2"/>
-                            <constraint firstItem="Slc-bz-FCD" firstAttribute="height" secondItem="sjG-EB-eXQ" secondAttribute="height" id="qIl-Gd-9G9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3Mo-HU-UW8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="Camera" selectedImage="CameraSelected" id="T5a-sw-Hzy"/>
                     <connections>
-                        <outlet property="imageScreen" destination="Slc-bz-FCD" id="Xf6-4f-CLW"/>
+                        <outlet property="imageScreen" destination="lQM-rg-PF9" id="evb-5b-l2w"/>
                         <outlet property="takeAPictureButton" destination="OF8-91-p93" id="CK9-B1-3Sm"/>
                         <segue destination="Pbw-Kz-tHW" kind="modal" identifier="captured_segue" id="LdP-V2-aBN"/>
                     </connections>
@@ -103,8 +102,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="37.5" height="37.5"/>
-        <image name="CameraSelected" width="37.5" height="37.5"/>
-        <image name="Capture.png" width="75" height="75"/>
+        <image name="Camera" width="25" height="25"/>
+        <image name="CameraSelected" width="25" height="25"/>
+        <image name="Capture.png" width="25" height="25"/>
     </resources>
 </document>
