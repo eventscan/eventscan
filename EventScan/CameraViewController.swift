@@ -7,80 +7,39 @@
 //
 
 import UIKit
-import AVFoundation
 
-class CameraViewController: UIViewController {
-
+class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
     @IBOutlet weak var imageScreen: UIImageView!
     
+    override func viewDidLoad() {
+        
+    }
     
     @IBAction func takeAPictureButton(_ sender: UIButton) {
-        
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.camera
+        self.present(image, animated: true)
     }
     
-    // actions from AVFoundation library
-    
-    var session: AVCaptureSession?
-    var stillImageOutput: AVCapturePhotoOutput?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        session = AVCaptureSession()
-        session!.sessionPreset = AVCaptureSession.Preset.photo
-        
-        
-        let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
-        var error: NSError?
-        var input: AVCaptureDeviceInput!
-        do {
-            input = try AVCaptureDeviceInput(device: backCamera!)
-        } catch let error1 as NSError {
-            error = error1
-            input = nil
-            print(error!.localizedDescription)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageScreen.image = image
+        } else {
+            print("Error")
         }
-        
-        if error == nil && session!.canAddInput(input) {
-            session!.addInput(input)
-            let stillImgOutput = AVCapturePhotoOutput()
-            let settings = AVCapturePhotoSettings()
-            settings.livePhotoVideoCodecType = .jpeg
-            stillImgOutput.capturePhoto(with: settings, delegate: self as! AVCapturePhotoCaptureDelegate)
-            
-            if session!.canAddOutput(stillImgOutput) {
-                session!.addOutput(stillImgOutput)
-                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session!)
-                videoPreviewLayer!.videoGravity = AVLayerVideoGravity.resizeAspect
-                videoPreviewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-                //videoPreviewLayer.addSublayer(videoPreviewLayer!)
-                //session!.startRunning()
-                
-                
-                
-            }
-
-            
-            
-            
-            
-        }
-        
-        
-
-        // Do any additional setup after loading the view.
+        self.dismiss(animated: true, completion: nil)
     }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
