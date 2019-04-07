@@ -38,47 +38,67 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         tabBarController?.selectedIndex = 0
     }
     @IBAction func confirm_button(_ sender: Any) {
-        // TO DO: Add the info to the lsit
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
-        //create new
-        let newEventInfo = NSManagedObject(entity: entity!, insertInto: context)
-        newEventInfo.setValue(event_name.text, forKey: "event_name")
-        newEventInfo.setValue(location.text, forKey: "location")
-        newEventInfo.setValue(date_picker.date, forKey: "date")
-        newEventInfo.setValue(time_picker.date, forKey: "time")
-        newEventInfo.setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
-        newEventInfo.setValue(event_details.text, forKey: "details")
-        //saving
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
-        }
-        tabBarController?.selectedIndex = 1
-        event_name.text = ""
-        location.text = ""
-        date_picker.date = Date()
-        time_picker.date = Date()
-        alert_picker.selectRow(1, inComponent: 0, animated: true)
-        selected_index = 1
-        event_details.text = ""
-        
-        //reading
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            print("loading data")
-            for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "event_name") as! String)
+        if (event_name.text?.isEmpty == false && location.text?.isEmpty == false) {
+            // TO DO: Add the info to the lsit
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
+            //create new
+            let newEventInfo = NSManagedObject(entity: entity!, insertInto: context) //insert this object to the array
+            newEventInfo.setValue(event_name.text, forKey: "event_name")
+            newEventInfo.setValue(location.text, forKey: "location")
+            newEventInfo.setValue(date_picker.date, forKey: "date")
+            newEventInfo.setValue(time_picker.date, forKey: "time")
+            newEventInfo.setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
+            newEventInfo.setValue(event_details.text, forKey: "details")
+            //saving
+            do {
+                try context.save()
+            } catch {
+                print("Failed saving")
             }
-            
-        } catch {
-            print("Failed")
-        }
+            tabBarController?.selectedIndex = 1
+            event_name.text = ""
+            location.text = ""
+            date_picker.date = Date()
+            time_picker.date = Date()
+            alert_picker.selectRow(1, inComponent: 0, animated: true)
+            selected_index = 1
+            event_details.text = ""
         
+            //reading
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
+            request.returnsObjectsAsFaults = false
+            do {
+                let result = try context.fetch(request)
+                print("loading data")
+                
+                //update by index
+                let events = result as! [NSManagedObject]
+                print(events[0].value(forKey: "event_name") as! String)
+                events[0].setValue("update", forKey: "event_name")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+                //read data by each object
+                for data in result as! [NSManagedObject] {
+                    print(data.value(forKey: "event_name") as! String)
+                    print(data.value(forKey: "location") as! String)
+                    print(data.value(forKey: "date") as! Date)
+                    print(data.value(forKey: "time") as! Date)
+                    print(data.value(forKey: "alert") as! String)
+                    print(data.value(forKey: "details") as! String)
+                    print("----------------\n")
+                }
+                
+            } catch {
+                print("Failed")
+            }
+        } else {
+            print("Event Name / Location is Empty")
+        }
         
     }
     

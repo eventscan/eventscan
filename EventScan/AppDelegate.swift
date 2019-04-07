@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+//        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+//        let viewController = storyboard.instantiateInitialViewController()
+//        window?.rootViewController = viewController
+//        window?.makeKeyAndVisible()
         return true
     }
 
