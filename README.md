@@ -72,7 +72,8 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 ## Wireframe
 <img src='prototype.jpeg' title='Wireframe'><br>
-<img src='https://github.com/eventscan/eventscan/files/3052132/IMG_3567.jpeg.MOV.zip' tutle = "Camera Gif'><br>
+
+<img src='https://github.com/eventscan/eventscan/files/3052132/IMG_3567.jpeg.MOV.zip' title='Camera Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## Schema 
