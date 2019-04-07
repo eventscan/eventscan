@@ -25,7 +25,7 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 - [ ] Display upcoming events    
 - [X] Scan flyers
-- [ ] Be able to view the camera
+- [X] Be able to view the camera
 - [X] Be able to use OCR
 - [ ] Take the picture first and then process the information 
 - [ ] Add the event to the user's calender app
