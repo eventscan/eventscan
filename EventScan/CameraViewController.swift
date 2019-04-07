@@ -8,13 +8,20 @@
 
 import UIKit
 
-class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     
     @IBOutlet weak var imageScreen: UIImageView!
     
     override func viewDidLoad() {
-        
+        TakeAVPictureButton(self)
     }
+    /* override func viewDidAppear(_ animated: Bool) {
+        
+        if (imageScreen.image == nil) {
+        TakeAVPictureButton(self)
+        }
+    } */
+    
     
     @IBAction func TakeAVPictureButton(_ sender: Any) {
         let image = UIImagePickerController()
@@ -33,6 +40,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         self.dismiss(animated: true, completion: nil)
     }
     
+   
     /*
      // MARK: - Navigation
      
