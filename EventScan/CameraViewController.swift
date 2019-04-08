@@ -13,24 +13,24 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var imageScreen: UIImageView!
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var clear_button: UIButton!
-    var shouldShowPopup = true
     override func viewDidLoad() {
         TakeAVPictureButton(self)
     }
     override func viewDidAppear(_ animated: Bool) {
         confirm_button.isHidden = self.imageScreen.image == nil
         clear_button.isHidden = self.imageScreen.image == nil
-        shouldShowPopup = false
+        
+        guard imageScreen.image == nil else {
+            return
+        }
+        
         TakeAVPictureButton(self)
     }
     
-    
-    
     override func viewDidDisappear(_ animated: Bool) {
-        shouldShowPopup = true
+        self.imageScreen.image = nil
     }
-    
-    
+
     @IBAction func TakeAVPictureButton(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
