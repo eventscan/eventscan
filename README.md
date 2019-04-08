@@ -109,6 +109,8 @@ Use the Captured Image and OCR library to Scan information, and create event on 
  	- No network calls made.
  * Event details screen
     - No network calls made.
+
+    
 ## Video Walkthrough
 
 Note, it may take a couple seconds for the gif to appear may take a couple seconds as the gif file is quite large.
