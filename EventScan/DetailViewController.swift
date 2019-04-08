@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    static var fromParser: Bool = false
+    static var fromList: Bool = false
     @IBOutlet weak var event_name: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var date_picker: UIDatePicker!
@@ -33,6 +34,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         CameraViewController.should_appear = true
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        DetailViewController.fromParser = false
+        DetailViewController.fromList = false
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -47,6 +53,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         event_details.text = ""
         tabBarController?.selectedIndex = 0
     }
+    
     @IBAction func confirm_button(_ sender: Any) {
         if (event_name.text?.isEmpty == false && location.text?.isEmpty == false) {
             // TO DO: Add the info to the lsit
