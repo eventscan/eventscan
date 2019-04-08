@@ -18,7 +18,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     override func viewDidAppear(_ animated: Bool) {
         
         if (UserDefaults.standard.bool(forKey: "view_diff") == nil || UserDefaults.standard.bool(forKey: "view_diff") == true) {
-        TakeAVPictureButton(self)
+            TakeAVPictureButton(self)
         }
     }
     
@@ -37,13 +37,23 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageScreen.image = image
+            
+            
+            VisionHelper.parseTextFrom(image: image) { (text) in
+                guard let text = text else {
+                    AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "Could not parse image!")
+                    return
+                }
+                AlertControllerHelper.presentAlert(for: self, withTitle: "Parsed text!", withMessage: "Text:\n" + text)
+            }
+            
         } else {
             print("Error")
         }
         self.dismiss(animated: true, completion: nil)
     }
     
-   
+    
     /*
      // MARK: - Navigation
      

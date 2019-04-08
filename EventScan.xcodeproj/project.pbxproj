@@ -20,6 +20,7 @@
 		A8431EB022530F6700B33383 /* AddressModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A8431EAE22530F6700B33383 /* AddressModel.mlmodel */; };
 		A87CE7BE22595D6E0050AFCB /* VisionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */; };
 		A87CE7C0225966E10050AFCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A87CE7BF225966E10050AFCB /* GoogleService-Info.plist */; };
+		A8853E19225AD55F00BFCCFC /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8853E18225AD55F00BFCCFC /* AlertControllerHelper.swift */; };
 		A8A7274622515CEE009FAA2C /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272E22515CED009FAA2C /* image.png */; };
 		A8A7274722515CEE009FAA2C /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8A7272F22515CED009FAA2C /* image3.png */; };
 		A8A7274822515CEE009FAA2C /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7273122515CED009FAA2C /* Client.m */; };
@@ -81,6 +82,7 @@
 		A8431EAE22530F6700B33383 /* AddressModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AddressModel.mlmodel; sourceTree = "<group>"; };
 		A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionHelper.swift; sourceTree = "<group>"; };
 		A87CE7BF225966E10050AFCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A8853E18225AD55F00BFCCFC /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
 		A8A7272D22515CED009FAA2C /* OcrSdkDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OcrSdkDemo-Prefix.pch"; sourceTree = "<group>"; };
 		A8A7272E22515CED009FAA2C /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		A8A7272F22515CED009FAA2C /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
@@ -200,7 +202,6 @@
 				A8A7273A22515CED009FAA2C /* NSString+Base64.h */,
 				A8A7274322515CEE009FAA2C /* NSString+Base64.m */,
 				A8A7272D22515CED009FAA2C /* OcrSdkDemo-Prefix.pch */,
-				A8A7273F22515CEE009FAA2C /* PhotoHelper.swift */,
 				A8A7273E22515CEE009FAA2C /* ProcessingOperation.h */,
 				A8A7273B22515CED009FAA2C /* ProcessingOperation.m */,
 				A8A7273822515CED009FAA2C /* ProcessingParams.h */,
@@ -243,6 +244,7 @@
 				C24205BB224058B00065C5DB /* HomeViewController.swift */,
 				5E8158902251647D00D9D583 /* Camera.storyboard */,
 				5E81588E2251645700D9D583 /* CameraViewController.swift */,
+				A8853E18225AD55F00BFCCFC /* AlertControllerHelper.swift */,
 				A8D8AB1F2252C6E300260FA8 /* Parser.swift */,
 				A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */,
 				A8431EAE22530F6700B33383 /* AddressModel.mlmodel */,
@@ -256,6 +258,7 @@
 				A813D89622556C3C00165A50 /* testImage.jpg */,
 				859A692222514C4C0096C20F /* Detail.storyboard */,
 				C2D5487322515087005F755A /* DetailViewController.swift */,
+				A8A7273F22515CEE009FAA2C /* PhotoHelper.swift */,
 				A8A7272B22515CD9009FAA2C /* Abby Workflow */,
 				C28DCA6F2255660400F609D5 /* Model.xcdatamodeld */,
 				C2DD6842225ABAA200A82BF7 /* ListViewController.swift */,
@@ -556,6 +559,7 @@
 			files = (
 				A8A7275322515CEE009FAA2C /* Task.m in Sources */,
 				A8A7275022515CEE009FAA2C /* ABBYHelper.swift in Sources */,
+				A8853E19225AD55F00BFCCFC /* AlertControllerHelper.swift in Sources */,
 				A8D8AB202252C6E300260FA8 /* Parser.swift in Sources */,
 				A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */,
 				A8A7275122515CEE009FAA2C /* PhotoHelper.swift in Sources */,
@@ -774,13 +778,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eventScan.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -796,13 +800,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = eventScan.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
