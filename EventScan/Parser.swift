@@ -11,7 +11,7 @@ import CoreML
 
 class Parser {
     let addressModel = AddressModel()
-
+    
     var keywordMap: [String: String]
     
     init() {
@@ -26,28 +26,18 @@ class Parser {
         let words = text.split(separator: " ")
         
         
-        var i = 0
-        
         var addressFound = false
         var lastFoundAddress = ""
         
         
-        while (!addressFound && i < words.count) {
-            
-            var check = words.first!
-            if (words.count > 0) {
-                
-                check = ""
-                for j in 0...i {
-                    check += " " + words[j]
+        for i in 0..<words.count {
+            for j in (i + 1)..<words.count {
+                var checkString = ""
+                for n in i...j {
+                    checkString += " " + words[n]
                 }
+                predictionSentiment(from: checkString)
             }
-            predictionSentiment(from: String(check))
-            
-            
-           i += 1
-            
-            
         }
         
         
