@@ -11,14 +11,19 @@ import UIKit
 class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     
     @IBOutlet weak var imageScreen: UIImageView!
+    @IBOutlet weak var confirm_button: UIButton!
+    @IBOutlet weak var clear_button: UIButton!
     
     override func viewDidLoad() {
         TakeAVPictureButton(self)
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        confirm_button.isHidden = self.imageScreen.image == nil
+        clear_button.isHidden = self.imageScreen.image == nil
         if (UserDefaults.standard.bool(forKey: "view_diff") == nil || UserDefaults.standard.bool(forKey: "view_diff") == true) {
-        TakeAVPictureButton(self)
+            if (self.imageScreen.image == nil) {
+                TakeAVPictureButton(self)
+            }
         }
     }
     
@@ -43,7 +48,17 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         self.dismiss(animated: true, completion: nil)
     }
     
-   
+    @IBAction func confirm_button_clicked(_ sender: Any) {
+        //tranfer data
+        tabBarController?.selectedIndex = 2
+        clear_button_clicked(sender)
+    }
+    
+    @IBAction func clear_button_clicked(_ sender: Any) {
+        self.imageScreen.image = nil
+        confirm_button.isHidden = self.imageScreen.image == nil
+        clear_button.isHidden = self.imageScreen.image == nil
+    }
     /*
      // MARK: - Navigation
      

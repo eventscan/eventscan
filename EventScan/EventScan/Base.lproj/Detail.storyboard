@@ -92,6 +92,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.62170911819999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Pq3-Mq-74o"/>
+                                    <constraint firstAttribute="height" constant="30" id="rCV-na-hhv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Confirm">
@@ -106,6 +107,7 @@
                                 <rect key="frame" x="30" y="817" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.62170911819999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N8n-m3-nOC"/>
                                     <constraint firstAttribute="width" constant="90" id="kGj-q5-xip"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
