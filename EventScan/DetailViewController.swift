@@ -26,10 +26,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.alert_picker.dataSource = self
         alert_picker_display_data = ["10 minute","5 minute","15 minute","Never"]
         alert_picker.selectRow(selected_index, inComponent: 0, animated: true)
-        
-        
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         CameraViewController.should_appear = true
     }
@@ -51,7 +49,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         alert_picker.selectRow(1, inComponent: 0, animated: true)
         selected_index = 1
         event_details.text = ""
-        tabBarController?.selectedIndex = 0
+        if (!DetailViewController.fromParser) {
+            tabBarController?.selectedIndex = 1
+        } else {
+            tabBarController?.selectedIndex = 0
+        }
     }
     
     @IBAction func confirm_button(_ sender: Any) {
@@ -83,7 +85,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             selected_index = 1
             event_details.text = ""
         
-            //reading
+            //editing
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
             request.returnsObjectsAsFaults = false
             do {
@@ -107,6 +109,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             } catch {
                 print("Failed")
             }
+            
             //reading
             do {
                 let result = try context.fetch(request)
@@ -132,6 +135,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    //below is for picker do not touch it
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
