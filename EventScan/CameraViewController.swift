@@ -22,7 +22,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         clear_button.isHidden = self.imageScreen.image == nil
         shouldShowPopup = false
         TakeAVPictureButton(self)
-        }
+    }
     
     
     
