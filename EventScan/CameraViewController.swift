@@ -9,10 +9,11 @@
 import UIKit
 
 class CameraViewController: UIViewController  {
-    
+    static var should_appear = false
     @IBOutlet weak var imageScreen: UIImageView!
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var clear_button: UIButton!
+    
     override func viewDidLoad() {
         TakeAVPictureButton(self)
     }
@@ -20,11 +21,9 @@ class CameraViewController: UIViewController  {
         confirm_button.isHidden = self.imageScreen.image == nil
         clear_button.isHidden = self.imageScreen.image == nil
         
-        guard imageScreen.image == nil else {
-            return
+        if (CameraViewController.should_appear && self.imageScreen.image == nil){
+            TakeAVPictureButton(self)
         }
-        
-        TakeAVPictureButton(self)
     }
 
     @IBAction func TakeAVPictureButton(_ sender: Any) {
@@ -33,8 +32,7 @@ class CameraViewController: UIViewController  {
         image.sourceType = UIImagePickerController.SourceType.camera
         self.present(image, animated: true)
         
-        UserDefaults.standard.set(false, forKey: "view_diff")
-        
+         CameraViewController.should_appear = false
     }
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
@@ -69,8 +67,11 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
         }
         self.dismiss(animated: true, completion: nil)
     }
-    
+   
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.imageScreen.image = UIImage()
+   //     self.imageScreen.image = nil
+        
+        self.dismiss(animated: true, completion: nil)
     }
+ 
 }

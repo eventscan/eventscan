@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        UserDefaults.standard.set(true, forKey: "view_diff")
+        CameraViewController.should_appear = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
