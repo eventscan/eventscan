@@ -26,10 +26,6 @@ class CameraViewController: UIViewController  {
         
         TakeAVPictureButton(self)
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        self.imageScreen.image = nil
-    }
 
     @IBAction func TakeAVPictureButton(_ sender: Any) {
         let image = UIImagePickerController()
@@ -72,5 +68,9 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
             print("Error")
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.imageScreen.image = UIImage()
     }
 }
