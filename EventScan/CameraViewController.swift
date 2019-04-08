@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CameraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+class CameraViewController: UIViewController  {
     
     @IBOutlet weak var imageScreen: UIImageView!
     @IBOutlet weak var confirm_button: UIButton!
@@ -41,16 +41,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
     }
     
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageScreen.image = image
-        } else {
-            print("Error")
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func confirm_button_clicked(_ sender: Any) {
         //tranfer data
         tabBarController?.selectedIndex = 2
@@ -72,4 +62,15 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
      }
      */
     
+}
+
+extension CameraViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageScreen.image = image
+        } else {
+            print("Error")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
 }
