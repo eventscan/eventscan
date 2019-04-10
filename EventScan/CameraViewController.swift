@@ -25,14 +25,14 @@ class CameraViewController: UIViewController  {
             TakeAVPictureButton(self)
         }
     }
-
+    
     @IBAction func TakeAVPictureButton(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
-        image.sourceType = UIImagePickerController.SourceType.camera
+        image.sourceType = UIImagePickerController.isSourceTypeAvailable(.camera) ? UIImagePickerController.SourceType.camera : UIImagePickerController.SourceType.photoLibrary
         self.present(image, animated: true)
         
-         CameraViewController.should_appear = false
+        CameraViewController.should_appear = false
     }
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
@@ -67,11 +67,11 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
         }
         self.dismiss(animated: true, completion: nil)
     }
-   
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-   //     self.imageScreen.image = nil
+        //     self.imageScreen.image = nil
         
         self.dismiss(animated: true, completion: nil)
     }
- 
+    
 }
