@@ -79,6 +79,6 @@ lint/tmp/
 lint/reports/
 
 #Xcode files
-#
+EventScan/GoogleService-Info.plist
 EventScan.xcodeproj/xcuserdata/AbidsMac.xcuserdatad/xcdebugger/
 Pods/
