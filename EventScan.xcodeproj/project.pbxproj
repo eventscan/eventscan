@@ -37,6 +37,8 @@
 		A8A7275322515CEE009FAA2C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274222515CEE009FAA2C /* Task.m */; };
 		A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274322515CEE009FAA2C /* NSString+Base64.m */; };
 		A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274422515CEE009FAA2C /* ProcessingParams.m */; };
+		A8D5C931225C08A6009EB5C4 /* EventData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */; };
+		A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */; };
 		A8D8AB202252C6E300260FA8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8AB1F2252C6E300260FA8 /* Parser.swift */; };
 		C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205B9224058B00065C5DB /* AppDelegate.swift */; };
 		C24205BC224058B00065C5DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205BB224058B00065C5DB /* HomeViewController.swift */; };
@@ -108,6 +110,8 @@
 		A8A7274322515CEE009FAA2C /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		A8A7274422515CEE009FAA2C /* ProcessingParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingParams.m; sourceTree = "<group>"; };
 		A8A7274522515CEE009FAA2C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		A8D5C930225C08A6009EB5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventData.storyboard; sourceTree = "<group>"; };
+		A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataViewController.swift; sourceTree = "<group>"; };
 		A8D8AB1F2252C6E300260FA8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BAA5104EB32ABE9E41865876 /* Pods_EventScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8783A899669F06379D2DE0 /* Pods_EventScanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +249,8 @@
 				5E8158902251647D00D9D583 /* Camera.storyboard */,
 				5E81588E2251645700D9D583 /* CameraViewController.swift */,
 				A8853E18225AD55F00BFCCFC /* AlertControllerHelper.swift */,
+				A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */,
+				A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */,
 				A8D8AB1F2252C6E300260FA8 /* Parser.swift */,
 				A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */,
 				A8431EAE22530F6700B33383 /* AddressModel.mlmodel */,
@@ -395,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A7275222515CEE009FAA2C /* image2.jpg in Resources */,
+				A8D5C931225C08A6009EB5C4 /* EventData.storyboard in Resources */,
 				5E8158922251647D00D9D583 /* Camera.storyboard in Resources */,
 				A813D89722556C3D00165A50 /* testImage.jpg in Resources */,
 				A813D89522556BA200165A50 /* Home.storyboard in Resources */,
@@ -577,6 +584,7 @@
 				A8A7274D22515CEE009FAA2C /* HTTPOperation.m in Sources */,
 				A8A7274822515CEE009FAA2C /* Client.m in Sources */,
 				C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */,
+				A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +642,14 @@
 				A813D89422556BA200165A50 /* Base */,
 			);
 			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8D5C930225C08A6009EB5C4 /* Base */,
+			);
+			name = EventData.storyboard;
 			sourceTree = "<group>";
 		};
 		C24205BD224058B00065C5DB /* Main.storyboard */ = {
