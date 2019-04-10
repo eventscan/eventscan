@@ -43,8 +43,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             //read data by each object
             events = result as! [NSManagedObject]
-//            print(events[0].value(forKey: "event_name") as! String)
-//
+
             for data in result as! [NSManagedObject] {
                 print(data.value(forKey: "event_name") as! String)
                 print(data.value(forKey: "location") as! String)
@@ -74,6 +73,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let event = events[indexPath.row];
         
         cell.eventName.text = event.value(forKey: "event_name") as? String
+        let date = event.value(forKey: "date") as! Date
+        let time = event.value(forKey: "time") as! Date
+        let date_string = date.description.split(separator: " ")
+        let time_string = time.description.split(separator: " ")
+        let time_splited = time_string[1].split(separator: ":")
+        //let combined = "\(date_string[0]) \(time_string[1]) +0000"
+        let combined = "\(date_string[0]) \(time_splited[0]):\(time_splited[1])"
+        cell.eventDate.text = combined
+        
         
         return cell
         
