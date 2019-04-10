@@ -16,7 +16,7 @@ class ListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-         UserDefaults.standard.set(true, forKey: "view_diff")
+         CameraViewController.should_appear = true
     }
     
 

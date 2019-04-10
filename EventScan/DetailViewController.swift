@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    static var fromParser: Bool = false
+    static var fromList: Bool = false
     @IBOutlet weak var event_name: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var date_picker: UIDatePicker!
@@ -25,12 +26,15 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.alert_picker.dataSource = self
         alert_picker_display_data = ["10 minute","5 minute","15 minute","Never"]
         alert_picker.selectRow(selected_index, inComponent: 0, animated: true)
-        
-        
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        UserDefaults.standard.set(true, forKey: "view_diff")
+        CameraViewController.should_appear = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        DetailViewController.fromParser = false
+        DetailViewController.fromList = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,8 +49,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         alert_picker.selectRow(1, inComponent: 0, animated: true)
         selected_index = 1
         event_details.text = ""
-        tabBarController?.selectedIndex = 0
+        if (!DetailViewController.fromParser) {
+            tabBarController?.selectedIndex = 1
+        } else {
+            tabBarController?.selectedIndex = 0
+        }
     }
+    
     @IBAction func confirm_button(_ sender: Any) {
         if (event_name.text?.isEmpty == false && location.text?.isEmpty == false) {
             // TO DO: Add the info to the lsit
@@ -76,7 +85,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             selected_index = 1
             event_details.text = ""
         
-            //reading
+            //editing
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
             request.returnsObjectsAsFaults = false
             do {
@@ -100,6 +109,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             } catch {
                 print("Failed")
             }
+            
             //reading
             do {
                 let result = try context.fetch(request)
@@ -125,6 +135,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    //below is for picker do not touch it
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
