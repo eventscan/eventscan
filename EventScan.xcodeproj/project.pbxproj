@@ -47,6 +47,7 @@
 		C24205DA224058B30065C5DB /* EventScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205D9224058B30065C5DB /* EventScanUITests.swift */; };
 		C28DCA712255660400F609D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C28DCA6F2255660400F609D5 /* Model.xcdatamodeld */; };
 		C2D5487422515087005F755A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D5487322515087005F755A /* DetailViewController.swift */; };
+		C2DC8346225EB36000F7FE61 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DC8345225EB35F00F7FE61 /* ListViewCell.swift */; };
 		C2DD6843225ABAA200A82BF7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DD6842225ABAA200A82BF7 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,7 @@
 		C24205DB224058B30065C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C28DCA702255660400F609D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C2D5487322515087005F755A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C2DC8345225EB35F00F7FE61 /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		C2DD6842225ABAA200A82BF7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C99DCC90011A5D76246CB50F /* Pods_EventScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9057CFF78EB08EFCCCEF2C2 /* Pods-EventScanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventScanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventScanUITests/Pods-EventScanUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				A8A7272B22515CD9009FAA2C /* Abby Workflow */,
 				C28DCA6F2255660400F609D5 /* Model.xcdatamodeld */,
 				C2DD6842225ABAA200A82BF7 /* ListViewController.swift */,
+				C2DC8345225EB35F00F7FE61 /* ListViewCell.swift */,
 			);
 			path = EventScan;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
 				A8431EB022530F6700B33383 /* AddressModel.mlmodel in Sources */,
 				A8A7274E22515CEE009FAA2C /* ProcessingOperation.m in Sources */,
+				C2DC8346225EB36000F7FE61 /* ListViewCell.swift in Sources */,
 				A8431EAF22530F6700B33383 /* timeModel.mlmodel in Sources */,
 				C24205BC224058B00065C5DB /* HomeViewController.swift in Sources */,
 				A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */,

@@ -88,6 +88,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             //editing
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
             request.returnsObjectsAsFaults = false
+            /*
             do {
                 let result = try context.fetch(request)
                 print("loading data")
@@ -109,7 +110,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             } catch {
                 print("Failed")
             }
-            
+             */
+ 
             //reading
             do {
                 let result = try context.fetch(request)

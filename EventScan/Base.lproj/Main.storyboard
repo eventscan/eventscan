@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="pUI-56-9io">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCell" rowHeight="84" id="pUI-56-9io" customClass="ListViewCell" customModule="EventScan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pUI-56-9io" id="45R-Wz-lAZ">
@@ -79,6 +79,10 @@
                                                 <constraint firstItem="yvz-sk-sgm" firstAttribute="leading" secondItem="45R-Wz-lAZ" secondAttribute="leading" constant="20" id="tjU-Te-bjT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDate" destination="gyJ-kq-GyU" id="zc1-Aa-TSc"/>
+                                            <outlet property="eventName" destination="yvz-sk-sgm" id="kWu-l2-NR3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -96,6 +100,7 @@
                     <tabBarItem key="tabBarItem" title="List" image="List" selectedImage="ListSelected" id="nHH-4U-phl"/>
                     <navigationItem key="navigationItem" id="ntr-10-CRs"/>
                     <connections>
+                        <outlet property="tableView" destination="z2D-eg-clD" id="NMr-g9-caR"/>
                         <segue destination="tm9-UO-khF" kind="push" identifier="detail_segue" animates="NO" id="tA9-Ew-MTB"/>
                     </connections>
                 </viewController>
@@ -120,6 +125,6 @@
         <image name="ListSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Js-6q-q7K"/>
+        <segue reference="tA9-Ew-MTB"/>
     </inferredMetricsTieBreakers>
 </document>
