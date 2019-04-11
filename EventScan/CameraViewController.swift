@@ -37,6 +37,7 @@ class CameraViewController: UIViewController  {
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
         //tranfer data
+        DetailViewController.fromParser = true
         tabBarController?.selectedIndex = 2
         clear_button_clicked(sender)
     }
