@@ -179,6 +179,7 @@
                     <navigationItem key="navigationItem" id="LO5-Z8-heB"/>
                     <connections>
                         <outlet property="alert_picker" destination="K0x-Kp-uaa" id="2fD-9d-8sl"/>
+                        <outlet property="confirm_button" destination="UQt-xf-eOl" id="h41-dN-FRT"/>
                         <outlet property="date_picker" destination="6RN-4t-lV1" id="zvB-DB-akO"/>
                         <outlet property="event_details" destination="Qvo-RA-FH0" id="UQe-B1-tUz"/>
                         <outlet property="event_name" destination="vIf-sh-ARL" id="oFh-bM-zAD"/>

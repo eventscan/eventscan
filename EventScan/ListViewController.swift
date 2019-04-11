@@ -90,7 +90,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         ListViewController.didSelect = indexPath.row
-        
+        DetailViewController.fromList = true
         tabBarController?.selectedIndex = 2
     }
     
