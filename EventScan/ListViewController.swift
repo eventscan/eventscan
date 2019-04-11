@@ -91,6 +91,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         ListViewController.didSelect = indexPath.row
         DetailViewController.fromList = true
+        DetailViewController.fromParser = false
         tabBarController?.selectedIndex = 2
     }
     
