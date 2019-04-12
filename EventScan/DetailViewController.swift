@@ -164,7 +164,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 } catch {
                     print("Failed")
                 }
-                tabBarController?.selectedIndex = 1
                 event_name.text = ""
                 location.text = ""
                 date_picker.date = Date()
@@ -172,6 +171,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 alert_picker.selectRow(1, inComponent: 0, animated: true)
                 selected_index = 1
                 event_details.text = ""
+                DetailViewController.fromList = false
             }
             tabBarController?.selectedIndex = 1
         } else {
