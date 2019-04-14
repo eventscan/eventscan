@@ -23,14 +23,14 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 **Required Must-have Stories**
 #### Status
 
-- [ ] Display upcoming events    
+- [X] Display upcoming events    
 - [X] Scan flyers
 - [X] Be able to view the camera
 - [X] Be able to use OCR
-- [ ] Take the picture first and then process the information 
+- [X] Take the picture first and then process the information 
 - [ ] Add the event to the user's calender app
 - [ ] Ask for alert preferences for the event
-- [ ] Be able to verify the event before adding it to the calender.
+- [X] Be able to verify the event before adding it to the calender.
 
 **Optional Nice-to-have Stories**
 
@@ -38,15 +38,15 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 - [ ] Ability to invite other users to the scanned event
 - [ ] Setup default alert times  i.e "At time of event" 
 - [ ] Be able to edit the newly scanned event in case the parsing algorithm failed
-- [ ] Detail Even View for upcoming events
+- [X] Detail Event View for upcoming events
 
 ### 2. Screen Archetypes
 
-- [ ] Camera View 
+- [X] Camera View 
  	- The user can take a picture of a flyer to be parsed by the app.
-- [ ] Image Confirmation View
+- [X] Image Confirmation View
  	- The user is presented with the picture they captured using the camera view. If they feel that the image captured contains all the inofrmation that they wish to inlclude in their calendar event, else they may rescan it.
-- [ ] Upcoming Events Screen
+- [X] Upcoming Events Screen
  	- It shows the user the closet events in their calendar that have been created using the app.
 - [ ] Event details screen
      - Once the information that event has been parsed, it is displayed to the user so they make some modifcations to the event if they wish to do so.
@@ -55,30 +55,25 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 
 **Tab Navigation** (Tab to Screen)
 
- - [ ] Camera View 
+ - [X] Camera View 
  	- The user uses the camera view to take a picture and create an event.
- - [ ] Upcoming Events
+ - [X] Upcoming Events
  	- The upcoming events view is where the user would go to view their upcoming events.
- - [ ] Manually enter an event (optional)
+ - [X] Manually enter an event (optional)
  	-  This can be a view for the users to create events manually using the application via the event detail view.
 
 **Flow Navigation** (Screen to Screen)
 
-- [ ] Camera View
+- [X] Camera View
      => Image Confirmation View
      => Events Detail View
-- [ ] Upcoming Events
+- [X] Upcoming Events
      => Events Detail View
 
 ## Wireframe
 <img src='prototype.jpeg' title='Wireframe'><br>
 
 <img src='https://github.com/eventscan/eventscan/files/3052132/IMG_3567.jpeg.MOV.zip' title='Camera Video Walkthrough' width='' alt='Video Walkthrough' />
-<a href="https://github.com/eventscan/eventscan/files/3052156/Camera.Feature.GIF.MP4.zip"> Link for Camera Feature </a>
-
-<a href="https://github.com/eventscan/eventscan/blob/master/DetailViewFrontEnd.MP4"> Link for Detail View Feature </a>
-
-
 
 
 ## Schema 
@@ -118,3 +113,8 @@ Note, it may take a couple seconds for the gif to appear may take a couple secon
 #### Sprint 2
 
 <img src='./gifs/Sprint2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<a href="https://github.com/eventscan/eventscan/files/3052156/Camera.Feature.GIF.MP4.zip"> Link for Camera Feature </a>
+
+<a href="https://github.com/eventscan/eventscan/blob/master/DetailViewFrontEnd.MP4"> Link for Detail View Feature </a>
+
+#### Sprint 3
