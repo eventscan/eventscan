@@ -118,3 +118,5 @@ Note, it may take a couple seconds for the gif to appear may take a couple secon
 <a href="https://github.com/eventscan/eventscan/blob/master/DetailViewFrontEnd.MP4"> Link for Detail View Feature </a>
 
 #### Sprint 3
+
+<a href="https://github.com/eventscan/eventscan/blob/master/RPReplay_Final1555278800.MP4.zip"> Link for Detail View Feature </a>
