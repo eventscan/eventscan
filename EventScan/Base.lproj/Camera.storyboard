@@ -19,11 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-bz-FCD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-91-p93">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-91-p93">
                                 <rect key="frame" x="150" y="560" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="ZlG-al-JZR"/>
+                                    <constraint firstAttribute="height" constant="75" id="u7f-D7-xkp"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Capture.png"/>
                                 <connections>
                                     <action selector="TakeAVPictureButton:" destination="VFa-Mw-WUj" eventType="touchUpInside" id="obB-uT-4yh"/>
@@ -64,14 +67,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3Mo-HU-UW8" firstAttribute="top" secondItem="Slc-bz-FCD" secondAttribute="top" id="Nsl-rF-rWL"/>
+                            <constraint firstAttribute="top" secondItem="Slc-bz-FCD" secondAttribute="top" id="Nsl-rF-rWL"/>
+                            <constraint firstItem="OF8-91-p93" firstAttribute="centerX" secondItem="3Mo-HU-UW8" secondAttribute="centerX" id="PWe-k5-HuH"/>
                             <constraint firstItem="98O-Dg-Z9q" firstAttribute="bottom" secondItem="3Mo-HU-UW8" secondAttribute="bottom" constant="-15" id="QuK-FK-tcH"/>
                             <constraint firstItem="zJP-vE-YMv" firstAttribute="bottom" secondItem="3Mo-HU-UW8" secondAttribute="bottom" constant="-15" id="drh-am-uz4"/>
-                            <constraint firstItem="Slc-bz-FCD" firstAttribute="leading" secondItem="3Mo-HU-UW8" secondAttribute="leading" id="k7d-cL-8sD"/>
+                            <constraint firstItem="Slc-bz-FCD" firstAttribute="leading" secondItem="sjG-EB-eXQ" secondAttribute="leading" id="k7d-cL-8sD"/>
                             <constraint firstItem="zJP-vE-YMv" firstAttribute="trailing" secondItem="3Mo-HU-UW8" secondAttribute="trailing" constant="-30" id="k9u-1M-EGy"/>
                             <constraint firstItem="Slc-bz-FCD" firstAttribute="width" secondItem="sjG-EB-eXQ" secondAttribute="width" id="ojN-Ot-AW2"/>
                             <constraint firstItem="Slc-bz-FCD" firstAttribute="height" secondItem="sjG-EB-eXQ" secondAttribute="height" id="qIl-Gd-9G9"/>
                             <constraint firstItem="98O-Dg-Z9q" firstAttribute="leading" secondItem="3Mo-HU-UW8" secondAttribute="leading" constant="30" id="v4N-C9-uxQ"/>
+                            <constraint firstItem="3Mo-HU-UW8" firstAttribute="bottom" secondItem="OF8-91-p93" secondAttribute="bottom" constant="28" id="yhU-Uo-eze"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Mo-HU-UW8"/>
                     </view>
@@ -80,6 +85,7 @@
                         <outlet property="clear_button" destination="98O-Dg-Z9q" id="Ecd-bw-qdQ"/>
                         <outlet property="confirm_button" destination="zJP-vE-YMv" id="CJt-17-Jhf"/>
                         <outlet property="imageScreen" destination="Slc-bz-FCD" id="7qd-gV-orX"/>
+                        <outlet property="take_pic_btn" destination="OF8-91-p93" id="39a-Ug-sBo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vi-Qa-YW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
