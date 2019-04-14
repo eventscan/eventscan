@@ -95,6 +95,43 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tabBarController?.selectedIndex = 2
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
+            request.returnsObjectsAsFaults = false
+            
+            do {
+                let result = try context.fetch(request)
+                print("loading data")
+                //read data by each object
+                events = result as! [NSManagedObject]
+                context.delete(events[indexPath.row])
+            } catch {
+                print("Failed")
+            }
+            do {
+                try context.save()
+            } catch {
+                print("Failed saving")
+            }
+            do {
+                let result = try context.fetch(request)
+                print("loading data")
+                //read data by each object
+                events = result as! [NSManagedObject]
+            } catch {
+                print("Failed")
+            }
+            tableView.reloadData()
+            
+        }
+    }
+    
+    
     /*
      // MARK: - Navigation
      
