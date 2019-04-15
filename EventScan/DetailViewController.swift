@@ -13,7 +13,6 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     static var fromParser: Bool = false
     static var fromList: Bool = false
     
-    
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var event_name: UITextField!
     @IBOutlet weak var location: UITextField!
@@ -36,9 +35,14 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
         print("current from parser: \(DetailViewController.fromParser)")
-        if (DetailViewController.fromParser) {
-            
-            
+        if (DetailViewController.fromParser && event != nil) {
+ 
+           
+            event_name.text = event?.name
+            location.text = event?.location
+            let date_string = event?.date
+//            date_picker.date =
+//            time_picker.date =
         }
         
         if (DetailViewController.fromList) {
@@ -103,6 +107,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         DetailViewController.fromList = false
         DetailViewController.fromParser = false
         print("successful")
+        event = nil
     }
     
     @IBAction func confirm_button(_ sender: Any) {
@@ -135,6 +140,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 selected_index = 1
                 event_details.text = ""
                 DetailViewController.fromParser = false
+                event = nil
             } else {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context = appDelegate.persistentContainer.viewContext
