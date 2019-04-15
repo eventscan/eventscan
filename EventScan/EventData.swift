@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EventData {
+class EventData {
     let text: String
     var isSelected: Bool
     

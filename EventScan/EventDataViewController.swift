@@ -75,10 +75,17 @@ extension EventDataViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         guard let cell = tableView.cellForRow(at: indexPath) else {return indexPath}
-        let color = cell.backgroundView?.backgroundColor
-        let isSelected = cell.accessoryType == .checkmark ? true : false
-        textData[indexPath.row].isSelected = !isSelected
-        cell.accessoryType = !isSelected ? .checkmark : .none
+        let data = textData[indexPath.row]
+        data.isSelected = true
+        cell.accessoryType = .checkmark
+        return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let cell = tableView.cellForRow(at: indexPath) else {return indexPath}
+        let data = textData[indexPath.row]
+        data.isSelected = false
+        cell.accessoryType = .none
         return indexPath
     }
     
