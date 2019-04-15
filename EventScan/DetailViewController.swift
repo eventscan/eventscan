@@ -12,6 +12,8 @@ import CoreData
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     static var fromParser: Bool = false
     static var fromList: Bool = false
+    static var shouldSet: Bool = false
+    
     
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var event_name: UITextField!
@@ -35,52 +37,55 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
         print("current from parser: \(DetailViewController.fromParser)")
-        if (DetailViewController.fromParser && event != nil) {
- 
-           
-            event_name.text = event?.name
-            location.text = event?.location
-            let date_string = event?.date
-//            date_picker.date =
-//            time_picker.date =
-        }
+        if (DetailViewController.shouldSet) {
+            if (DetailViewController.fromParser && event != nil) {
+     
+               
+                event_name.text = event?.name
+                location.text = event?.location
+                let date_string = event?.date
+    //            date_picker.date =
+    //            time_picker.date =
+                DetailViewController.shouldSet = false
+            }
         
-        if (DetailViewController.fromList) {
-            confirm_button.setTitle("Edit", for: .normal)
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
-            
-            //reading
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
-            request.returnsObjectsAsFaults = false
-            do {
-                let result = try context.fetch(request)
-                print("loading data")
+            if (DetailViewController.fromList) {
+                confirm_button.setTitle("Edit", for: .normal)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
                 
-                //read data by each object
-                let events = result as! [NSManagedObject]
-                event_name.text = events[ListViewController.didSelect].value(forKey: "event_name") as! String
-                location.text = events[ListViewController.didSelect].value(forKey: "location") as! String
-                date_picker.date = events[ListViewController.didSelect].value(forKey: "date") as! Date
-                time_picker.date = events[ListViewController.didSelect].value(forKey: "time") as! Date
-                event_details.text = events[ListViewController.didSelect].value(forKey: "details") as! String
-                
-                let alert_string = events[ListViewController.didSelect].value(forKey: "alert") as! String
-                for index in 0...(alert_picker_display_data.count - 1) {
-                    if (alert_string == alert_picker_display_data[index]) {
-                        alert_picker.selectRow(index, inComponent: 0, animated: true)
-                        selected_index = index
+                //reading
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
+                request.returnsObjectsAsFaults = false
+                do {
+                    let result = try context.fetch(request)
+                    print("loading data")
+                    
+                    //read data by each object
+                    let events = result as! [NSManagedObject]
+                    event_name.text = events[ListViewController.didSelect].value(forKey: "event_name") as! String
+                    location.text = events[ListViewController.didSelect].value(forKey: "location") as! String
+                    date_picker.date = events[ListViewController.didSelect].value(forKey: "date") as! Date
+                    time_picker.date = events[ListViewController.didSelect].value(forKey: "time") as! Date
+                    event_details.text = events[ListViewController.didSelect].value(forKey: "details") as! String
+                    
+                    let alert_string = events[ListViewController.didSelect].value(forKey: "alert") as! String
+                    for index in 0...(alert_picker_display_data.count - 1) {
+                        if (alert_string == alert_picker_display_data[index]) {
+                            alert_picker.selectRow(index, inComponent: 0, animated: true)
+                            selected_index = index
+                        }
                     }
+                    DetailViewController.shouldSet = false
+                } catch {
+                    print("Failed")
                 }
                 
-            } catch {
-                print("Failed")
+               
+            } else {
+                confirm_button.setTitle("Confirm", for: .normal)
             }
-            
-           
-        } else {
-            confirm_button.setTitle("Confirm", for: .normal)
         }
     }
     

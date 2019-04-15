@@ -176,7 +176,8 @@ class CameraViewController: UIViewController  {
     @IBAction func confirm_button_clicked(_ sender: Any) {
         //tranfer data
         DetailViewController.fromParser = true
-//        tabBarController?.selectedIndex = 2
+        DetailViewController.shouldSet = true
+
         clear_button_clicked(sender)
         take_pic_btn.isHidden = false
         self.performSegue(withIdentifier: "toEventData", sender: self)

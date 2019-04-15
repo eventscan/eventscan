@@ -76,10 +76,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let date = event.value(forKey: "date") as! Date
         let time = event.value(forKey: "time") as! Date
         let date_string = date.description.split(separator: " ")
-        let time_string = time.description.split(separator: " ")
-        let time_splited = time_string[1].split(separator: ":")
-        //let combined = "\(date_string[0]) \(time_string[1]) +0000"
-        let combined = "\(date_string[0]) \(time_splited[0]):\(time_splited[1])"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "HH:mm"
+        let combined = "\(date_string[0]) \(dateFormatterPrint.string(from: time))"
         cell.eventDate.text = combined
         
         
@@ -92,6 +92,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ListViewController.didSelect = indexPath.row
         DetailViewController.fromList = true
         DetailViewController.fromParser = false
+        DetailViewController.shouldSet = true
         tabBarController?.selectedIndex = 2
     }
     
