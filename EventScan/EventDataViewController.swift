@@ -15,6 +15,10 @@ class EventDataViewController: UIViewController {
     var inputText: String!
     var textData = [EventData]()
     var parsePosition = 0
+    var eventName: String?
+    var eventDate: String?
+    var eventLocation: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventDataTableView.allowsMultipleSelection = true
@@ -34,6 +38,7 @@ class EventDataViewController: UIViewController {
     
     
     @IBAction func previousButtonPressed(_ sender: UIBarButtonItem) {
+        self.parsePosition -= 1
     }
     
     
@@ -44,15 +49,21 @@ class EventDataViewController: UIViewController {
         }
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        guard let identifier = segue.identifier else {return}
+        if identifier == "toDetailView" {
+            guard let vc = segue.destination as? DetailViewController, let name = self.eventName, let location = self.eventLocation, let date = self.eventDate else {return}
+            vc.event = Event(name: name, location: location, date: date)
+        }
+        
      }
-     */
+    
     
 }
 

@@ -23,6 +23,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var event_details: UITextView!
     var alert_picker_display_data: [String] = [String]()
     var selected_index = 1
+    var event: Event?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert_picker.delegate = self
