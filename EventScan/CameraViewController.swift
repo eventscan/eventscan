@@ -174,10 +174,12 @@ class CameraViewController: UIViewController  {
     }
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
-        //tranfer data
+        /* this two line should be done after info is send to detail view */
         DetailViewController.fromParser = true
         DetailViewController.shouldSet = true
-
+        /*-------------please update it after implementation--------------*/
+        
+        
         clear_button_clicked(sender)
         take_pic_btn.isHidden = false
         self.performSegue(withIdentifier: "toEventData", sender: self)
