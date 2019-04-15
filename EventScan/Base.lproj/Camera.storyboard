@@ -86,6 +86,7 @@
                         <outlet property="confirm_button" destination="zJP-vE-YMv" id="CJt-17-Jhf"/>
                         <outlet property="imageScreen" destination="Slc-bz-FCD" id="7qd-gV-orX"/>
                         <outlet property="take_pic_btn" destination="OF8-91-p93" id="39a-Ug-sBo"/>
+                        <segue destination="pqb-Ln-ZFt" kind="show" identifier="toEventData" id="L5u-I6-v06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vi-Qa-YW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,6 +103,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3D-Of-5pw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="178.56071964017991"/>
+        </scene>
+        <!--EventData-->
+        <scene sceneID="6GW-dU-HEt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventData" id="pqb-Ln-ZFt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQX-ar-cSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="548"/>
         </scene>
     </scenes>
     <resources>

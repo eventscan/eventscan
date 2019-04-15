@@ -34,7 +34,7 @@ struct VisionHelper {
             }
             
             // Recognized text
-            print(result.text)
+//            print(result.text)
             completion(result.text)
         }
     }

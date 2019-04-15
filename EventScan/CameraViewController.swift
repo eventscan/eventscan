@@ -30,7 +30,7 @@ class CameraViewController: UIViewController  {
     
     var zoomInGestureRecognizer = UISwipeGestureRecognizer()
     var zoomOutGestureRecognizer = UISwipeGestureRecognizer()
-    
+    var inputText: String!
     
     override func viewDidLoad() {
         setupCaptureSession()
@@ -176,9 +176,10 @@ class CameraViewController: UIViewController  {
     @IBAction func confirm_button_clicked(_ sender: Any) {
         //tranfer data
         DetailViewController.fromParser = true
-        tabBarController?.selectedIndex = 2
+//        tabBarController?.selectedIndex = 2
         clear_button_clicked(sender)
         take_pic_btn.isHidden = false
+        self.performSegue(withIdentifier: "toEventData", sender: self)
     }
     
     @IBAction func clear_button_clicked(_ sender: Any) {
@@ -186,6 +187,15 @@ class CameraViewController: UIViewController  {
         confirm_button.isHidden = self.imageScreen.image == nil
         clear_button.isHidden = self.imageScreen.image == nil
         take_pic_btn.isHidden = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {return}
+        if identifier == "toEventData" {
+            guard let eventDataNV = segue.destination as? UINavigationController else {return}
+            guard let eventDataVC = eventDataNV.viewControllers.first as? EventDataViewController else {return}
+            eventDataVC.inputText = self.inputText
+        }
     }
 
     
@@ -195,6 +205,10 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             self.imageScreen.image = UIImage(data: imageData)
+            VisionHelper.parseTextFrom(image: self.imageScreen.image!) { (text) in
+                guard let text = text else {return}
+                self.inputText = text
+            }
         }
     }
 }

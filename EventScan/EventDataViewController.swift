@@ -9,19 +9,30 @@
 import UIKit
 
 class EventDataViewController: UIViewController {
-
+    
     @IBOutlet weak var eventDataTableView: UITableView!
     @IBOutlet weak var promptLabel: UILabel!
+    var inputText: String!
     var textData = [EventData]()
     var parsePosition = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         eventDataTableView.allowsMultipleSelection = true
         
+        //        textData = [EventData]()
+        
+        for line in inputText.split(separator: "\n") {
+            for word in String(line).split(separator: " ") {
+                let data = EventData(text: String(word))
+                textData.append(data)
+            }
+        }
+        
+        self.eventDataTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func previousButtonPressed(_ sender: UIBarButtonItem) {
     }
     
@@ -34,15 +45,15 @@ class EventDataViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 
@@ -52,22 +63,28 @@ extension EventDataViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventDataCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventDataCell", for: indexPath) as? EventDataCell else {return UITableViewCell()}
         
         let eventData = textData[indexPath.row]
-        cell.textLabel?.text = eventData.text
+        cell.eventDataLabel.text = eventData.text
         cell.accessoryType = eventData.isSelected ? .checkmark : .none
-        
+        cell.selectionStyle = .none
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) else {return}
-        
-        textData[indexPath.row].isSelected = !textData[indexPath.row].isSelected
-        cell.accessoryType = textData[indexPath.row].isSelected ? .checkmark : .none
-        
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let cell = tableView.cellForRow(at: indexPath) else {return indexPath}
+        let color = cell.backgroundView?.backgroundColor
+        let isSelected = cell.accessoryType == .checkmark ? true : false
+        textData[indexPath.row].isSelected = !isSelected
+        cell.accessoryType = !isSelected ? .checkmark : .none
+        return indexPath
     }
+    
+
 }
 
-extension EventDataViewController: UITableViewDelegate {}
+extension EventDataViewController: UITableViewDelegate {
+    
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eHX-UG-KoL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,20 +41,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6u-X6-6jX">
                                                     <rect key="frame" x="15" y="11" width="313" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="DOi-r6-XTH"/>
-                                                        <constraint firstAttribute="width" constant="313" id="cjd-Cd-BKs"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="G6u-X6-6jX" firstAttribute="centerX" secondItem="veP-aP-Ywt" secondAttribute="centerX" id="Hrs-7l-VeU"/>
-                                                <constraint firstItem="G6u-X6-6jX" firstAttribute="centerY" secondItem="veP-aP-Ywt" secondAttribute="centerY" id="bFR-h9-pLr"/>
+                                                <constraint firstItem="G6u-X6-6jX" firstAttribute="top" secondItem="veP-aP-Ywt" secondAttribute="topMargin" id="Caw-C8-aNA"/>
+                                                <constraint firstItem="G6u-X6-6jX" firstAttribute="leading" secondItem="veP-aP-Ywt" secondAttribute="leadingMargin" id="TUo-Sv-mU5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="G6u-X6-6jX" secondAttribute="trailing" id="Zpg-tw-O8E"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="G6u-X6-6jX" secondAttribute="bottom" id="uMg-zv-fgq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDataLabel" destination="G6u-X6-6jX" id="WUB-BP-WCp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

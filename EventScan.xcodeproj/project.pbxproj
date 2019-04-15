@@ -36,6 +36,7 @@
 		A8A7275322515CEE009FAA2C /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274222515CEE009FAA2C /* Task.m */; };
 		A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274322515CEE009FAA2C /* NSString+Base64.m */; };
 		A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274422515CEE009FAA2C /* ProcessingParams.m */; };
+		A8C9770E22653F4200E69B97 /* EventDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9770D22653F4200E69B97 /* EventDataCell.swift */; };
 		A8D5C931225C08A6009EB5C4 /* EventData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */; };
 		A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */; };
 		A8D6D128225EA5A100232CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */; };
@@ -111,6 +112,7 @@
 		A8A7274322515CEE009FAA2C /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		A8A7274422515CEE009FAA2C /* ProcessingParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingParams.m; sourceTree = "<group>"; };
 		A8A7274522515CEE009FAA2C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		A8C9770D22653F4200E69B97 /* EventDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCell.swift; sourceTree = "<group>"; };
 		A8D5C930225C08A6009EB5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventData.storyboard; sourceTree = "<group>"; };
 		A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataViewController.swift; sourceTree = "<group>"; };
 		A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */,
 				A8D6D129225EA7A900232CDF /* EventData.swift */,
 				A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */,
+				A8C9770D22653F4200E69B97 /* EventDataCell.swift */,
 				A8D8AB1F2252C6E300260FA8 /* Parser.swift */,
 				A87CE7BD22595D6E0050AFCB /* VisionHelper.swift */,
 				A8431EAE22530F6700B33383 /* AddressModel.mlmodel */,
@@ -580,6 +583,7 @@
 				A87CE7BE22595D6E0050AFCB /* VisionHelper.swift in Sources */,
 				C28DCA712255660400F609D5 /* Model.xcdatamodeld in Sources */,
 				5E81588F2251645700D9D583 /* CameraViewController.swift in Sources */,
+				A8C9770E22653F4200E69B97 /* EventDataCell.swift in Sources */,
 				C2DD6843225ABAA200A82BF7 /* ListViewController.swift in Sources */,
 				C2D5487422515087005F755A /* DetailViewController.swift in Sources */,
 				A8431EB022530F6700B33383 /* AddressModel.mlmodel in Sources */,
@@ -802,13 +806,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -824,13 +828,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
