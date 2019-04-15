@@ -13,6 +13,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     static var fromParser: Bool = false
     static var fromList: Bool = false
     
+    
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var event_name: UITextField!
     @IBOutlet weak var location: UITextField!
@@ -33,6 +34,12 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidAppear(_ animated: Bool) {
         CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
+        print("current from parser: \(DetailViewController.fromParser)")
+        if (DetailViewController.fromParser) {
+            
+            
+        }
+        
         if (DetailViewController.fromList) {
             confirm_button.setTitle("Edit", for: .normal)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -126,7 +133,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 alert_picker.selectRow(1, inComponent: 0, animated: true)
                 selected_index = 1
                 event_details.text = ""
-            
+                DetailViewController.fromParser = false
             } else {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context = appDelegate.persistentContainer.viewContext
