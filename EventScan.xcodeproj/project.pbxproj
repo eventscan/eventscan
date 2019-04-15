@@ -37,6 +37,7 @@
 		A8A7275422515CEE009FAA2C /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274322515CEE009FAA2C /* NSString+Base64.m */; };
 		A8A7275522515CEE009FAA2C /* ProcessingParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A7274422515CEE009FAA2C /* ProcessingParams.m */; };
 		A8C9770E22653F4200E69B97 /* EventDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9770D22653F4200E69B97 /* EventDataCell.swift */; };
+		A8C97710226545C700E69B97 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9770F226545C700E69B97 /* Event.swift */; };
 		A8D5C931225C08A6009EB5C4 /* EventData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */; };
 		A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */; };
 		A8D6D128225EA5A100232CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */; };
@@ -113,6 +114,7 @@
 		A8A7274422515CEE009FAA2C /* ProcessingParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingParams.m; sourceTree = "<group>"; };
 		A8A7274522515CEE009FAA2C /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		A8C9770D22653F4200E69B97 /* EventDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataCell.swift; sourceTree = "<group>"; };
+		A8C9770F226545C700E69B97 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A8D5C930225C08A6009EB5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventData.storyboard; sourceTree = "<group>"; };
 		A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataViewController.swift; sourceTree = "<group>"; };
 		A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				5E81588E2251645700D9D583 /* CameraViewController.swift */,
 				A8853E18225AD55F00BFCCFC /* AlertControllerHelper.swift */,
 				A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */,
+				A8C9770F226545C700E69B97 /* Event.swift */,
 				A8D6D129225EA7A900232CDF /* EventData.swift */,
 				A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */,
 				A8C9770D22653F4200E69B97 /* EventDataCell.swift */,
@@ -597,6 +600,7 @@
 				A8A7274822515CEE009FAA2C /* Client.m in Sources */,
 				C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */,
 				A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */,
+				A8C97710226545C700E69B97 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
