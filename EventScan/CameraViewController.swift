@@ -175,8 +175,7 @@ class CameraViewController: UIViewController  {
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
         /* this two line should be done after info is send to detail view */
-        DetailViewController.fromParser = true
-        DetailViewController.shouldSet = true
+        
         /*-------------please update it after implementation--------------*/
         
         

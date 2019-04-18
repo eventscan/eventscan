@@ -135,7 +135,8 @@ class EventDataViewController: UIViewController {
             self.dismiss(animated: true) {
                 DetailViewController.event = Event(name: self.eventName ?? String(), location: self.eventLocation ?? String(), date: self.eventDate ?? String(), detail: self.eventDetail ?? String())
                 self.myTabBarController?.selectedIndex = 2
-                
+                DetailViewController.fromParser = true
+                DetailViewController.shouldSet = true
             }
             
         }
