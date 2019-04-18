@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController  {
-    static var should_appear = false
+    var should_appear = false
     @IBOutlet weak var imageScreen: UIImageView!
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var clear_button: UIButton!
@@ -159,26 +159,22 @@ class CameraViewController: UIViewController  {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        confirm_button.isHidden = self.imageScreen.image == nil
-        clear_button.isHidden = self.imageScreen.image == nil
-        
+//        confirm_button.isHidden = self.imageScreen.image == nil
+//        clear_button.isHidden = self.imageScreen.image == nil
+//
     }
     
     @IBAction func TakeAVPictureButton(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         self.photoOutput?.capturePhoto(with: settings, delegate: self)
-        CameraViewController.should_appear = false
+//        CameraViewController.should_appear = false
         confirm_button.isHidden = false
         clear_button.isHidden = false
         take_pic_btn.isHidden = true
     }
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
-        /* this two line should be done after info is send to detail view */
-        
-        /*-------------please update it after implementation--------------*/
-        
-        
+
         clear_button_clicked(sender)
         take_pic_btn.isHidden = false
         self.performSegue(withIdentifier: "toEventData", sender: self)
@@ -186,8 +182,8 @@ class CameraViewController: UIViewController  {
     
     @IBAction func clear_button_clicked(_ sender: Any) {
         self.imageScreen.image = nil
-        confirm_button.isHidden = self.imageScreen.image == nil
-        clear_button.isHidden = self.imageScreen.image == nil
+        confirm_button.isHidden = true
+        clear_button.isHidden = true
         take_pic_btn.isHidden = false
     }
     
@@ -214,6 +210,8 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
                     return
                 }
                 self.inputText = text
+                self.clear_button.isHidden = false
+                self.confirm_button.isHidden = false
             }
             self.imageScreen.image = image
         }

@@ -32,7 +32,7 @@
                                     <action selector="TakeAVPictureButton:" destination="VFa-Mw-WUj" eventType="touchUpInside" id="obB-uT-4yh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-vE-YMv">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJP-vE-YMv">
                                 <rect key="frame" x="280" y="630" width="95" height="37"/>
                                 <color key="backgroundColor" red="0.0" green="0.62170911819999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -48,7 +48,7 @@
                                     <action selector="confirm_button_clicked:" destination="VFa-Mw-WUj" eventType="touchUpInside" id="sbP-yc-mCb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Dg-Z9q">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Dg-Z9q">
                                 <rect key="frame" x="30" y="622" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.62170911819999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

@@ -104,6 +104,7 @@ class EventDataViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         var combined_string = String()
+        if (textData.count > 0){
         for i in 0...(textData.count - 1) {
             let data = textData[i]
             if(data.isSelected) {
@@ -122,6 +123,7 @@ class EventDataViewController: UIViewController {
                 }
             }
             
+        }
         }
         textData = textData.filter({!$0.isSelected})
         save_data(position: self.parsePosition, combined_text: combined_string)

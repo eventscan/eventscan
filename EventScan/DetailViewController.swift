@@ -35,7 +35,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidAppear(_ animated: Bool) {
         print("event: \(DetailViewController.event)")
-        CameraViewController.should_appear = true
+//        CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
         print("current from parser: \(DetailViewController.fromParser)")
         if (DetailViewController.shouldSet) {
