@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import EventKit
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -57,8 +58,53 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } catch {
             print("Failed")
         }
+       
+
+        
+        for data in events {
+           let event_name = data.value(forKey: "event_name") as! String
+           let location = data.value(forKey: "location") as! String
+           let date = data.value(forKey: "date") as! Date
+           let time = data.value(forKey: "time") as! Date
+           let alert = data.value(forKey: "alert") as! String
+           let details = data.value(forKey: "details") as! String
+  
+            
+            addEventToCalendar(title: event_name, description: details, startDate: date, endDate: date)
+        }
+        
         tableView.reloadData()
     }
+    
+    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async { () -> Void in
+            let eventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event = EKEvent(eventStore: eventStore)
+                    event.title = title
+                    event.startDate = startDate
+                    event.endDate = endDate
+                    event.notes = description
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
+                    }
+                    completion?(true, nil)
+                } else {
+                    completion?(false, error as NSError?)
+                }
+            })
+        }
+    }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

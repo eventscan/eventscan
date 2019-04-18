@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		479B9A33D0F0F856887302DD /* Pods_EventScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA5104EB32ABE9E41865876 /* Pods_EventScan.framework */; };
+		5E25E6EE2267E9B300B43967 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E25E6ED2267E9B300B43967 /* GoogleService-Info.plist */; };
 		5E81588F2251645700D9D583 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81588E2251645700D9D583 /* CameraViewController.swift */; };
 		5E8158922251647D00D9D583 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8158902251647D00D9D583 /* Camera.storyboard */; };
 		639BFD8A4519A2B08B1E9E0E /* Pods_EventScanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99DCC90011A5D76246CB50F /* Pods_EventScanUITests.framework */; };
@@ -40,7 +41,6 @@
 		A8C97710226545C700E69B97 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9770F226545C700E69B97 /* Event.swift */; };
 		A8D5C931225C08A6009EB5C4 /* EventData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D5C92F225C08A6009EB5C4 /* EventData.storyboard */; };
 		A8D5C933225C0C1B009EB5C4 /* EventDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */; };
-		A8D6D128225EA5A100232CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */; };
 		A8D6D12A225EA7A900232CDF /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6D129225EA7A900232CDF /* EventData.swift */; };
 		A8D8AB202252C6E300260FA8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D8AB1F2252C6E300260FA8 /* Parser.swift */; };
 		C24205BA224058B00065C5DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24205B9224058B00065C5DB /* AppDelegate.swift */; };
@@ -75,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		280272BE65E292F9DA0DB525 /* Pods-EventScanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventScanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventScanUITests/Pods-EventScanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E25E6ED2267E9B300B43967 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E81588E2251645700D9D583 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5E8158912251647D00D9D583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		7BA5EE80F8B9339E4A73A38D /* Pods-EventScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventScan/Pods-EventScan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		A8C9770F226545C700E69B97 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A8D5C930225C08A6009EB5C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventData.storyboard; sourceTree = "<group>"; };
 		A8D5C932225C0C1B009EB5C4 /* EventDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataViewController.swift; sourceTree = "<group>"; };
-		A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A8D6D129225EA7A900232CDF /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		A8D8AB1F2252C6E300260FA8 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BAA5104EB32ABE9E41865876 /* Pods_EventScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,7 +251,7 @@
 		C24205B8224058B00065C5DB /* EventScan */ = {
 			isa = PBXGroup;
 			children = (
-				A8D6D127225EA5A100232CDF /* GoogleService-Info.plist */,
+				5E25E6ED2267E9B300B43967 /* GoogleService-Info.plist */,
 				C24205B9224058B00065C5DB /* AppDelegate.swift */,
 				C24205BB224058B00065C5DB /* HomeViewController.swift */,
 				5E8158902251647D00D9D583 /* Camera.storyboard */,
@@ -423,8 +423,8 @@
 				A8A7274722515CEE009FAA2C /* image3.png in Resources */,
 				C24205C1224058B20065C5DB /* Assets.xcassets in Resources */,
 				C24205BF224058B00065C5DB /* Main.storyboard in Resources */,
-				A8D6D128225EA5A100232CDF /* GoogleService-Info.plist in Resources */,
 				A8A7274922515CEE009FAA2C /* image4.png in Resources */,
+				5E25E6EE2267E9B300B43967 /* GoogleService-Info.plist in Resources */,
 				A8A7274B22515CEE009FAA2C /* image6.jpg in Resources */,
 				859A692422514C4C0096C20F /* Detail.storyboard in Resources */,
 				A8A7274622515CEE009FAA2C /* image.png in Resources */,
@@ -523,7 +523,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EventScan/Pods-EventScan-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-EventScan/Pods-EventScan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -544,7 +544,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventScan/Pods-EventScan-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventScan/Pods-EventScan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E65AA0330CF3D63AE40F4BEF /* [CP] Copy Pods Resources */ = {
@@ -555,7 +555,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EventScan/Pods-EventScan-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-EventScan/Pods-EventScan-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -566,7 +566,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EventScan/Pods-EventScan-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventScan/Pods-EventScan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -810,13 +810,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = 7X77AY4YJF;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -832,13 +832,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZMCS57K2XJ;
+				DEVELOPMENT_TEAM = 7X77AY4YJF;
 				INFOPLIST_FILE = EventScan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan0;
+				PRODUCT_BUNDLE_IDENTIFIER = akaisani.EventScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventScan/Abby Workflow/EventScan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
