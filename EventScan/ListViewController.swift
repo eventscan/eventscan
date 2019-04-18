@@ -69,8 +69,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
            let alert = data.value(forKey: "alert") as! String
            let details = data.value(forKey: "details") as! String
   
-            
+            //lets change this to if detail view adds new event call this method
             addEventToCalendar(title: event_name, description: details, startDate: date, endDate: date)
+            //if detail view edits existing event, remove original event, call this method again
+            
+            //if list view deletes an existing event, remove it from calender
         }
         
         tableView.reloadData()
