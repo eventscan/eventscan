@@ -198,6 +198,7 @@ class CameraViewController: UIViewController  {
             guard let eventDataNV = segue.destination as? UINavigationController else {return}
             guard let eventDataVC = eventDataNV.viewControllers.first as? EventDataViewController else {return}
             eventDataVC.inputText = self.inputText
+            eventDataVC.myTabBarController = self.tabBarController!
         }
     }
 
@@ -207,11 +208,15 @@ class CameraViewController: UIViewController  {
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            self.imageScreen.image = UIImage(data: imageData)
-            VisionHelper.parseTextFrom(image: self.imageScreen.image!) { (text) in
-                guard let text = text else {return}
+            let image = UIImage(data: imageData)
+            VisionHelper.parseTextFrom(image: image!) { (text) in
+                guard let text = text else {
+                    self.inputText = nil
+                    return
+                }
                 self.inputText = text
             }
+            self.imageScreen.image = image
         }
     }
 }

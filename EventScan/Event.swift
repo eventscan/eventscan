@@ -12,4 +12,5 @@ struct Event {
     let name: String
     let location: String
     let date: String
+    let detail: String
 }

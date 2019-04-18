@@ -13,7 +13,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     static var fromParser: Bool = false
     static var fromList: Bool = false
     static var shouldSet: Bool = false
-    
+    static var event: Event?
     
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var event_name: UITextField!
@@ -24,7 +24,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var event_details: UITextView!
     var alert_picker_display_data: [String] = [String]()
     var selected_index = 1
-    var event: Event?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert_picker.delegate = self
@@ -34,18 +34,20 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("event: \(DetailViewController.event)")
         CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
         print("current from parser: \(DetailViewController.fromParser)")
         if (DetailViewController.shouldSet) {
-            if (DetailViewController.fromParser && event != nil) {
+            if (DetailViewController.fromParser && DetailViewController.event != nil) {
      
                
-                event_name.text = event?.name
-                location.text = event?.location
-                let date_string = event?.date
+                event_name.text = DetailViewController.event?.name
+                location.text = DetailViewController.event?.location
+                let date_string = DetailViewController.event?.date
     //            date_picker.date =
     //            time_picker.date =
+                event_details.text = DetailViewController.event?.detail
                 DetailViewController.shouldSet = false
             }
         
@@ -112,7 +114,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         DetailViewController.fromList = false
         DetailViewController.fromParser = false
         print("successful")
-        event = nil
+        DetailViewController.event = nil
     }
     
     @IBAction func confirm_button(_ sender: Any) {
@@ -145,7 +147,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 selected_index = 1
                 event_details.text = ""
                 DetailViewController.fromParser = false
-                event = nil
+                DetailViewController.event = nil
             } else {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context = appDelegate.persistentContainer.viewContext
