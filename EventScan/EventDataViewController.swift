@@ -34,10 +34,8 @@ class EventDataViewController: UIViewController {
             let alertController = UIAlertController(title: "Error", message:
                 "No word detected", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Confirm", style: .default) { _ in
-                CATransaction.setCompletionBlock({
                     print("test")
                    self.dismiss(animated: true, completion: nil)
-                })
             })
             
           
