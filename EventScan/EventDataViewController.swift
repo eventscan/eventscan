@@ -61,10 +61,12 @@ class EventDataViewController: UIViewController {
     
     
     @IBAction func previousButtonPressed(_ sender: UIBarButtonItem) {
+        var key = getMapDetailItem()!
+        self.eventDetailsMap[key] = nil
         self.parsePosition -= 1
         guard self.parsePosition >= 0 else {self.dismiss(animated: true); return}
         
-        let key = getMapDetailItem()!
+        key = getMapDetailItem()!
         self.currentText = self.eventDetailsMap[key] ?? ""
         self.textData = self.dataStateStack.removeLast()
         eventDataTableView.reloadData()
