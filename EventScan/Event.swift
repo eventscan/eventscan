@@ -20,12 +20,12 @@ struct Event {
     
     var date: Date {
         
-        let year = self.year.count > 0 ? (self.year.count > 2 ? "yyyy" : "yy") : ""
-        let day = self.day.count > 0 ? (self.day.count <= 2 ? "dd" : (self.day.count <= 4 ? "E" : "EEEE")) : ""
-        let month = self.month.count > 0 ? (self.day.count <= 2 ? "MM" : (self.day.count == 3 ? "MMM" : "MMMM")) : ""
+        let year = self.year.count > 0 ? (self.year.count > 2 ? "yyyy" : "yy") : "yyyy"
+        let day = self.day.count > 0 ? (self.day.count <= 2 ? "dd" : (self.day.count <= 4 ? "E" : "EEEE")) : "EEEE"
+        let month = self.month.count > 0 ? (self.day.count <= 2 ? "MM" : (self.day.count == 3 ? "MMM" : "MMMM")) : "MM"
         
         //todo time
-        var time = ""
+        var time = "HH:MM"
         if self.time.contains(":") {
             let timeComponents = self.time.split(separator: ":")
             if timeComponents.count == 2 {
@@ -48,9 +48,15 @@ struct Event {
         
         var valueString = ""
         
-        valueString += (day.count > 0) ? self.day + "-" : ""
-        valueString += (month.count > 0) ? self.month + "-" : ""
-        valueString += (year.count >  0) ? self.year + "-": ""
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "dd"
+        valueString += (day.count > 0) ? self.day + "-" : dateFormatter.string(from: currentDate)
+        dateFormatter.dateFormat = "MM"
+        valueString += (month.count > 0) ? self.month + "-" : dateFormatter.string(from: currentDate)
+        dateFormatter.dateFormat = "yyyy"
+        valueString += (year.count >  0) ? self.year + "-": dateFormatter.string(from: currentDate)
 //        valueString += (time.count > 0) ? self.time + "-" : ""
         
         if time.count > 0 {
@@ -65,11 +71,11 @@ struct Event {
             } else {
                 valueString += self.time
             }
+        } else {
+            dateFormatter.dateFormat = "HH::MM"
+            valueString += "-" + dateFormatter.string(from: currentDate)
         }
         
-        
-        
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatString //Your date format
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         dateFormatter.amSymbol = "AM"
@@ -77,7 +83,7 @@ struct Event {
         //according to date format your date string
         print(formatString, valueString)
         guard let date = dateFormatter.date(from: valueString) else {
-            return Date()
+            return currentDate
         }
         return date
     }
