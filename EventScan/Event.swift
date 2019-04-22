@@ -11,6 +11,10 @@ import Foundation
 struct Event {
     let name: String
     let location: String
-    let date: String
+//    let date: String
+    let day: String
+    let time: String
+    let year: String
+    let month: String
     let detail: String
 }
