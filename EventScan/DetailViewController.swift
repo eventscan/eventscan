@@ -311,6 +311,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
                 if (granted) && (error == nil) {
+                    if (eventStore.event(withIdentifier: identifier) == nil) {
+                        self.addEventToCalendar(title: title, description: description, startDate: startDate, endDate: endDate)
+                        return
+                    }
                     let event: EKEvent = eventStore.event(withIdentifier: identifier)!
                     event.title = title
                     event.startDate = startDate
