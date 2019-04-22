@@ -52,6 +52,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(data.value(forKey: "time") as! Date)
                 print(data.value(forKey: "alert") as! String)
                 print(data.value(forKey: "details") as! String)
+//                print(data.value(forKey: "identifier") as! String)
                 print("----------------\n")
             }
             
@@ -70,7 +71,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
            let details = data.value(forKey: "details") as! String
   
             //lets change this to if detail view adds new event call this method
-            addEventToCalendar(title: event_name, description: details, startDate: date, endDate: date)
+//            addEventToCalendar(title: event_name, description: details, startDate: date, endDate: date)
             //if detail view edits existing event, remove original event, call this method again
             
             //if list view deletes an existing event, remove it from calender
@@ -79,33 +80,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
-    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
-        DispatchQueue.global(qos: .background).async { () -> Void in
-            let eventStore = EKEventStore()
-            
-            eventStore.requestAccess(to: .event, completion: { (granted, error) in
-                if (granted) && (error == nil) {
-                    let event = EKEvent(eventStore: eventStore)
-                    event.title = title
-                    event.startDate = startDate
-                    event.endDate = endDate
-                    event.notes = description
-                    event.calendar = eventStore.defaultCalendarForNewEvents
-                    do {
-                        try eventStore.save(event, span: .thisEvent)
-                    } catch let e as NSError {
-                        completion?(false, e)
-                        return
-                    }
-                    completion?(true, nil)
-                } else {
-                    completion?(false, error as NSError?)
-                }
-            })
-        }
-    }
     
     
+
     
     
     
@@ -124,11 +101,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.eventName.text = event.value(forKey: "event_name") as? String
         let date = event.value(forKey: "date") as! Date
         let time = event.value(forKey: "time") as! Date
-        let date_string = date.description.split(separator: " ")
-        
+//        let date_string = date.description.split(separator: " ")
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "HH:mm"
-        let combined = "\(date_string[0]) \(dateFormatterPrint.string(from: time))"
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+        let timeFormatterPrint = DateFormatter()
+        timeFormatterPrint.dateFormat = "HH:mm"
+        let combined = "\(dateFormatterPrint.string(from: date)) \(timeFormatterPrint.string(from: time))"
         cell.eventDate.text = combined
         
         
@@ -159,6 +137,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print("loading data")
                 //read data by each object
                 events = result as! [NSManagedObject]
+                deleteEventFromCalendar(identifier: events[indexPath.row].value(forKey: "identifier") as! String)
                 context.delete(events[indexPath.row])
             } catch {
                 print("Failed")
@@ -181,6 +160,29 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    
+    func deleteEventFromCalendar(identifier: String,completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        
+        DispatchQueue.global(qos: .background).async { () -> Void in
+            let eventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event: EKEvent = eventStore.event(withIdentifier: identifier)!
+                    do {
+                        try eventStore.remove(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
+                    }
+                    completion?(true, nil)
+                } else {
+                    completion?(false, error as NSError?)
+                }
+            })
+        }
+        
+    }
     
     /*
      // MARK: - Navigation

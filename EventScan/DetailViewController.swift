@@ -8,12 +8,15 @@
 
 import UIKit
 import CoreData
+import EventKit
+//import GameplayKit
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     static var fromParser: Bool = false
     static var fromList: Bool = false
     static var shouldSet: Bool = false
     static var event: Event?
+
     
     @IBOutlet weak var confirm_button: UIButton!
     @IBOutlet weak var event_name: UITextField!
@@ -24,7 +27,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var event_details: UITextView!
     var alert_picker_display_data: [String] = [String]()
     var selected_index = 1
-
+    let minute_to_add = [10.0, 5.0, 15.0, 0.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert_picker.delegate = self
@@ -45,6 +49,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 event_name.text = DetailViewController.event?.name
                 location.text = DetailViewController.event?.location
                 let date_string = DetailViewController.event?.date
+                
     //            date_picker.date =
     //            time_picker.date =
                 event_details.text = DetailViewController.event?.detail
@@ -132,12 +137,26 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 newEventInfo.setValue(time_picker.date, forKey: "time")
                 newEventInfo.setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
                 newEventInfo.setValue(event_details.text, forKey: "details")
-                //saving
                 do {
                     try context.save()
                 } catch {
                     print("Failed saving")
                 }
+                
+                let date_data = date_picker.date
+                let time_data = time_picker.date
+                let dateFormatterPrint = DateFormatter()
+                dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+                let timeFormatterPrint = DateFormatter()
+                timeFormatterPrint.dateFormat = "HH:mm"
+                let date_string = dateFormatterPrint.string(from: date_data)
+                let time_string = timeFormatterPrint.string(from: time_data)
+                let combineFormatterPrint = DateFormatter()
+                combineFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm"
+                let combined_date = combineFormatterPrint.date(from: "\(date_string) \(time_string)")
+                print(combined_date?.description)
+                
+                addEventToCalendar(title: event_name.text!, description: "Location: \(location.text ?? String())\nDetail: \(event_details.text ?? String())", startDate: combined_date!.addingTimeInterval(-60.0 * minute_to_add[selected_index]), endDate: combined_date!)
                 tabBarController?.selectedIndex = 1
                 event_name.text = ""
                 location.text = ""
@@ -163,12 +182,30 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                  
                     //update by index
                     var events = result as! [NSManagedObject]
+                    let identifier = events[ListViewController.didSelect].value(forKey: "identifier") as! String
+                    print(identifier)
                     events[ListViewController.didSelect].setValue(event_name.text, forKey: "event_name")
                     events[ListViewController.didSelect].setValue(location.text, forKey: "location")
                     events[ListViewController.didSelect].setValue(date_picker.date, forKey: "date")
                     events[ListViewController.didSelect].setValue(time_picker.date, forKey: "time")
-                    events[ListViewController.didSelect].setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
+                events[ListViewController.didSelect].setValue(alert_picker_display_data[alert_picker.selectedRow(inComponent: 0)], forKey: "alert")
                     events[ListViewController.didSelect].setValue(event_details.text, forKey: "details")
+                    
+                    
+                    let date_data = date_picker.date
+                    let time_data = time_picker.date
+                    let dateFormatterPrint = DateFormatter()
+                    dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+                    let timeFormatterPrint = DateFormatter()
+                    timeFormatterPrint.dateFormat = "HH:mm"
+                    let date_string = dateFormatterPrint.string(from: date_data)
+                    let time_string = timeFormatterPrint.string(from: time_data)
+                    let combineFormatterPrint = DateFormatter()
+                    combineFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm"
+                    let combined_date = combineFormatterPrint.date(from: "\(date_string) \(time_string)")
+                    print("combined date\(combined_date?.description)")
+                    
+                    editEventToCalendar(title: event_name.text!, description: "Location: \(location.text ?? String())\nDetail: \(event_details.text ?? String())", startDate: combined_date!.addingTimeInterval(-60.0 * minute_to_add[selected_index]), endDate: combined_date!, identifier: identifier)
                     
                     /*
                     //try remove the last element
@@ -204,6 +241,96 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         
     }
+    
+
+    
+    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        DispatchQueue.global(qos: .background).async { () -> Void in
+            let eventStore = EKEventStore()
+
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event = EKEvent(eventStore: eventStore)
+                    event.title = title
+                    event.startDate = startDate
+                    event.endDate = endDate
+                    event.notes = description
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+//                    event.eventIdentifier =
+                    print(event.eventIdentifier)
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
+                    }
+                    
+                    
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let context = appDelegate.persistentContainer.viewContext
+                    let entity = NSEntityDescription.entity(forEntityName: "EventInfo", in: context)
+                    
+                    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "EventInfo")
+                    request.returnsObjectsAsFaults = false
+                    
+                    do {
+                        let result = try context.fetch(request)
+                        print("loading data")
+                        var events = result as! [NSManagedObject]
+                        events[events.count - 1].setValue(event.eventIdentifier, forKey: "identifier")
+                        //save
+                        do {
+                            try context.save()
+                        } catch {
+                            print("Failed saving")
+                        }
+                        
+                    } catch {
+                        print("Failed")
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    completion?(true, nil)
+                } else {
+                    completion?(false, error as NSError?)
+                }
+            })
+        }
+    }
+    
+    func editEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, identifier: String,completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+
+        DispatchQueue.global(qos: .background).async { () -> Void in
+            let eventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event: EKEvent = eventStore.event(withIdentifier: identifier)!
+                    event.title = title
+                    event.startDate = startDate
+                    event.endDate = endDate
+                    event.notes = description
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
+                    }
+                    completion?(true, nil)
+                } else {
+                    completion?(false, error as NSError?)
+                }
+            })
+        }
+
+    }
+    
     
     //below is for picker do not touch it
     override func didReceiveMemoryWarning() {
