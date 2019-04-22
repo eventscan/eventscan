@@ -154,6 +154,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 let time_string = timeFormatterPrint.string(from: time_data)
                 let combineFormatterPrint = DateFormatter()
                 combineFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm"
+                print("Time zone : \(combineFormatterPrint.timeZone)")
                 let combined_date = combineFormatterPrint.date(from: "\(date_string) \(time_string)")
                 print(combined_date?.description)
                 
@@ -204,6 +205,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     let combineFormatterPrint = DateFormatter()
                     combineFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm"
                     let combined_date = combineFormatterPrint.date(from: "\(date_string) \(time_string)")
+                    print("Time zone : \(combineFormatterPrint.timeZone)")
                     print("combined date\(combined_date?.description)")
                     
                     editEventToCalendar(title: event_name.text!, description: "Location: \(location.text ?? String())\nDetail: \(event_details.text ?? String())", startDate: combined_date!.addingTimeInterval(-60.0 * minute_to_add[selected_index]), endDate: combined_date!, identifier: identifier)

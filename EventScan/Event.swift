@@ -11,7 +11,7 @@ import Foundation
 struct Event {
     let name: String
     let location: String
-//    let date: String
+    //    let date: String
     let day: String
     let time: String
     let year: String
@@ -20,12 +20,12 @@ struct Event {
     
     var date: Date {
         
-        let year = self.year.count > 0 ? (self.year.count > 2 ? "yyyy" : "yy") : "yyyy"
-        let day = self.day.count > 0 ? (self.day.count <= 2 ? "dd" : (self.day.count <= 4 ? "E" : "EEEE")) : "EEEE"
-        let month = self.month.count > 0 ? (self.day.count <= 2 ? "MM" : (self.day.count == 3 ? "MMM" : "MMMM")) : "MM"
+        let year = self.year.count > 0 ? (self.year.count > 2 ? "yyyy" : "yy") : ""
+        let day = self.day.count > 0 ? (self.day.count <= 2 ? "dd" : (self.day.count <= 4 ? "E" : "EEEE")) : ""
+        let month = self.month.count > 0 ? (self.day.count <= 2 ? "MM" : (self.day.count == 3 ? "MMM" : "MMMM")) : ""
         
         //todo time
-        var time = "HH:MM"
+        var time = ""
         if self.time.contains(":") {
             let timeComponents = self.time.split(separator: ":")
             if timeComponents.count == 2 {
@@ -34,10 +34,10 @@ struct Event {
         } else {
             time = "HH"
         }
-    
-        if self.time.contains("AM") || self.time.contains("PM") {
-            time += "-a"
-        }
+        
+//        if self.time.contains("AM") || self.time.contains("PM") {
+//            time += "-a"
+//        }
         
         
         var formatString = ""
@@ -48,42 +48,34 @@ struct Event {
         
         var valueString = ""
         
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "dd"
-        valueString += (day.count > 0) ? self.day + "-" : dateFormatter.string(from: currentDate)
-        dateFormatter.dateFormat = "MM"
-        valueString += (month.count > 0) ? self.month + "-" : dateFormatter.string(from: currentDate)
-        dateFormatter.dateFormat = "yyyy"
-        valueString += (year.count >  0) ? self.year + "-": dateFormatter.string(from: currentDate)
-//        valueString += (time.count > 0) ? self.time + "-" : ""
+        valueString += (day.count > 0) ? self.day + "-" : ""
+        valueString += (month.count > 0) ? self.month + "-" : ""
+        valueString += (year.count >  0) ? self.year + "-": ""
+        //        valueString += (time.count > 0) ? self.time + "-" : ""
         
         if time.count > 0 {
             if self.time.contains("AM") {
                 let timeString = String(self.time[self.time.startIndex..<self.time.index(of: "A")!])
                 valueString += timeString
-                valueString += "-AM"
+
             } else if self.time.contains("PM") {
-                let timeString = String(self.time[self.time.startIndex..<self.time.index(of: "P")!])
+                var timeString = String(self.time[self.time.startIndex..<self.time.index(of: "P")!])
+                timeString = String(Int(timeString)! + 12)
                 valueString += timeString
-                valueString += "-PM"
+
             } else {
                 valueString += self.time
             }
-        } else {
-            dateFormatter.dateFormat = "HH::MM"
-            valueString += "-" + dateFormatter.string(from: currentDate)
         }
         
+        
+        
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatString //Your date format
-//        dateFormatter.timeZone =
-        dateFormatter.amSymbol = "AM"
-        dateFormatter.pmSymbol = "PM"
-        //according to date format your date string
+        print(dateFormatter.timeZone)
         print(formatString, valueString)
         guard let date = dateFormatter.date(from: valueString) else {
-            return currentDate
+            return Date()
         }
         return date
     }
