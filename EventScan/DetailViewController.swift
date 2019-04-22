@@ -51,8 +51,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 //TODO :: create a date using information available
 //                let date_string = DetailViewController.event?.time
                 
-                date_picker.date = DetailViewController.event?.date
-                time_picker.date = DetailViewController.event?.date
+                date_picker.date = DetailViewController.event?.date ?? Date()
+                time_picker.date = DetailViewController.event?.date ?? Date()
                 event_details.text = DetailViewController.event?.detail
                 DetailViewController.shouldSet = false
             }
