@@ -77,7 +77,7 @@ struct Event {
         }
         
         dateFormatter.dateFormat = formatString //Your date format
-        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+//        dateFormatter.timeZone =
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         //according to date format your date string

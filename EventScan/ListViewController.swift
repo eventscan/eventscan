@@ -109,6 +109,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let combined = "\(dateFormatterPrint.string(from: date)) \(timeFormatterPrint.string(from: time))"
         cell.eventDate.text = combined
         
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = UIColor.cyan
+        }
+        else {
+            cell.backgroundColor = UIColor.lightGray
+        }
         
         return cell
         
