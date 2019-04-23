@@ -28,8 +28,8 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 - [X] Be able to view the camera
 - [X] Be able to use OCR
 - [X] Take the picture first and then process the information 
-- [ ] Add the event to the user's calender app
-- [ ] Ask for alert preferences for the event
+- [X] Add the event to the user's calender app
+- [X] Ask for alert preferences for the event
 - [X] Be able to verify the event before adding it to the calender.
 
 **Optional Nice-to-have Stories**
@@ -37,7 +37,7 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 - [ ] User Onboarding 
 - [ ] Ability to invite other users to the scanned event
 - [ ] Setup default alert times  i.e "At time of event" 
-- [ ] Be able to edit the newly scanned event in case the parsing algorithm failed
+- [X] Be able to edit the newly scanned event in case the parsing algorithm failed
 - [X] Detail Event View for upcoming events
 
 ### 2. Screen Archetypes
@@ -48,7 +48,7 @@ Use the Captured Image and OCR library to Scan information, and create event on 
  	- The user is presented with the picture they captured using the camera view. If they feel that the image captured contains all the inofrmation that they wish to inlclude in their calendar event, else they may rescan it.
 - [X] Upcoming Events Screen
  	- It shows the user the closet events in their calendar that have been created using the app.
-- [ ] Event details screen
+- [X] Event details screen
      - Once the information that event has been parsed, it is displayed to the user so they make some modifcations to the event if they wish to do so.
 
 ### 3. Navigation
