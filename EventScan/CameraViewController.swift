@@ -161,7 +161,7 @@ class CameraViewController: UIViewController  {
     override func viewDidAppear(_ animated: Bool) {
         confirm_button.isHidden = self.imageScreen.image == nil
         clear_button.isHidden = self.imageScreen.image == nil
-//
+        take_pic_btn.isHidden = self.imageScreen.image != nil
     }
     
     @IBAction func TakeAVPictureButton(_ sender: Any) {
@@ -170,13 +170,13 @@ class CameraViewController: UIViewController  {
 //        CameraViewController.should_appear = false
         confirm_button.isHidden = false
         clear_button.isHidden = false
-//        take_pic_btn.isHidden = true
+        take_pic_btn.isHidden = true
     }
     
     @IBAction func confirm_button_clicked(_ sender: Any) {
         
         clear_button_clicked(sender)
-//        take_pic_btn.isHidden = false
+        take_pic_btn.isHidden = false
         self.performSegue(withIdentifier: "toEventData", sender: self)
     }
     
@@ -184,7 +184,7 @@ class CameraViewController: UIViewController  {
         self.imageScreen.image = nil
         confirm_button.isHidden = true
         clear_button.isHidden = true
-//        take_pic_btn.isHidden = false
+        take_pic_btn.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
