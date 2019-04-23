@@ -109,11 +109,27 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let combined = "\(dateFormatterPrint.string(from: date)) \(timeFormatterPrint.string(from: time))"
         cell.eventDate.text = combined
         
-        if (indexPath.row % 2 == 0) {
-            cell.backgroundColor = UIColor.cyan
+        if (indexPath.row % 6 == 0) {
+//            cell.backgroundColor = UIColor.cyan
+            cell.backgroundColor = UIColor( red: CGFloat(16/255.0), green: CGFloat(0/255.0), blue: CGFloat(1/255.0), alpha: CGFloat(1) )
+            cell.eventName.textColor = UIColor.white
+            cell.eventDate.textColor = UIColor.white
+//                UIColor(displayP3Red: 244, green: 208, blue: 71, alpha: 0.8)
+        }
+        else if (indexPath.row % 6 == 1) {
+            cell.backgroundColor = UIColor( red: CGFloat(255/255.0), green: CGFloat(197/255.0), blue: CGFloat(10/255.0), alpha: CGFloat(1) )
+        }
+        else if (indexPath.row % 6 == 2) {
+            cell.backgroundColor = UIColor( red: CGFloat(255/255.0), green: CGFloat(237/255.0), blue: CGFloat(79/255.0), alpha: CGFloat(1) )
+        }
+        else if (indexPath.row % 6 == 3) {
+            cell.backgroundColor = UIColor( red: CGFloat(255/255.0), green: CGFloat(237/255.0), blue: CGFloat(79/255.0), alpha: CGFloat(0.6) )
+        }
+        else if (indexPath.row % 6 == 4) {
+            cell.backgroundColor = UIColor( red: CGFloat(136/255.0), green: CGFloat(136/255.0), blue: CGFloat(136/255.0), alpha: CGFloat(1) )
         }
         else {
-            cell.backgroundColor = UIColor.lightGray
+            cell.backgroundColor = UIColor( red: CGFloat(240/255.0), green: CGFloat(240/255.0), blue: CGFloat(240/255.0), alpha: CGFloat(1) )
         }
         
         return cell
