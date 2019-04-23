@@ -159,8 +159,8 @@ class CameraViewController: UIViewController  {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        confirm_button.isHidden = self.imageScreen.image == nil
-//        clear_button.isHidden = self.imageScreen.image == nil
+        confirm_button.isHidden = self.imageScreen.image == nil
+        clear_button.isHidden = self.imageScreen.image == nil
 //
     }
     

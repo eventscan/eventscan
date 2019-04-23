@@ -124,6 +124,7 @@ class EventDataViewController: UIViewController {
             self.myTabBarController?.selectedIndex = 2
             DetailViewController.fromParser = true
             DetailViewController.shouldSet = true
+            
         }
         
         
