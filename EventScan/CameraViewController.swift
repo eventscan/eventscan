@@ -168,8 +168,8 @@ class CameraViewController: UIViewController  {
         let settings = AVCapturePhotoSettings()
         self.photoOutput?.capturePhoto(with: settings, delegate: self)
 //        CameraViewController.should_appear = false
-        confirm_button.isHidden = false
-        clear_button.isHidden = false
+//        confirm_button.isHidden = false
+//        clear_button.isHidden = false
         take_pic_btn.isHidden = true
     }
     
@@ -205,13 +205,13 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)
             VisionHelper.parseTextFrom(image: image!) { (text) in
+                self.clear_button.isHidden = false
+                self.confirm_button.isHidden = false
                 guard let text = text else {
                     self.inputText = nil
                     return
                 }
                 self.inputText = text
-                self.clear_button.isHidden = false
-                self.confirm_button.isHidden = false
             }
             self.imageScreen.image = image
         }
