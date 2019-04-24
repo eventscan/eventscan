@@ -35,9 +35,17 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.alert_picker.dataSource = self
         alert_picker_display_data = ["10 minute","5 minute","15 minute","Never"]
         alert_picker.selectRow(selected_index, inComponent: 0, animated: true)
+        date_picker.setValue(UIColor.yellow
+            , forKeyPath: "textColor")
+        time_picker.setValue(UIColor.yellow
+            , forKeyPath: "textColor")
+        alert_picker.setValue(UIColor.yellow
+            , forKeyPath: "textColor")
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         print("event: \(DetailViewController.event)")
 //        CameraViewController.should_appear = true
         print("current from list: \(DetailViewController.fromList)")
@@ -352,10 +360,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return alert_picker_display_data.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return alert_picker_display_data[row]
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return alert_picker_display_data[row]
+//    }
+//
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: alert_picker_display_data[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.yellow])
     }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected_index = row
     }
