@@ -29,7 +29,7 @@ struct Event {
         if self.time.contains(":") {
             let timeComponents = self.time.split(separator: ":")
             if timeComponents.count == 2 {
-                time = "HH:MM"
+                time = "HH:mm"
             }
         } else {
             time = "HH"
@@ -43,14 +43,14 @@ struct Event {
         var formatString = ""
         formatString += (day.count > 0) ? day + "-" : ""
         formatString += (month.count > 0) ? month + "-" : ""
-        formatString += (year.count >  0) ? year + "-": ""
-        formatString += (time.count > 0) ? time + "-" : ""
+        formatString += (year.count >  0) ? year + " ": ""
+        formatString += (time.count > 0) ? time + "" : ""
         
         var valueString = ""
         
         valueString += (day.count > 0) ? self.day + "-" : ""
         valueString += (month.count > 0) ? self.month + "-" : ""
-        valueString += (year.count >  0) ? self.year + "-": ""
+        valueString += (year.count >  0) ? self.year + " ": ""
         //        valueString += (time.count > 0) ? self.time + "-" : ""
         
         if time.count > 0 {

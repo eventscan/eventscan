@@ -14,7 +14,7 @@ class EventDataViewController: UIViewController {
     @IBOutlet weak var promptLabel: UILabel!
     var inputText: String!
     var textData = [EventData]()
-    var currentText = ""
+//    var currentText = ""
     var dataStateStack = [[EventData]]()
     var parsePosition = 0 {
         didSet {
@@ -47,7 +47,6 @@ class EventDataViewController: UIViewController {
         }
         
         for line in inputText.split(separator: "\n") {
-            //            let data = EventData(text: String(line))
             for word in String(line).split(separator: " ") {
                 let data = EventData(text: String(word))
                 textData.append(data)
@@ -67,7 +66,8 @@ class EventDataViewController: UIViewController {
         guard self.parsePosition >= 0 else {self.dismiss(animated: true); return}
         
         key = getMapDetailItem()!
-        self.currentText = self.eventDetailsMap[key] ?? ""
+        
+//        self.currentText = self.eventDetailsMap[key] ?? ""
         self.textData = self.dataStateStack.removeLast()
         eventDataTableView.reloadData()
         
@@ -97,27 +97,57 @@ class EventDataViewController: UIViewController {
     @IBAction func nextButtonPressed(_ sender: UIBarButtonItem) {
         guard let key = getMapDetailItem() else {return}
         self.dataStateStack.append(self.textData)
+        var string = ""
+        for data in textData {
+            if data.isSelected {
+                string += data.text + " "
+            }
+        }
+        if (string.count > 0) {
+            string.remove(at: string.index(before: string.endIndex))
+        }
+        self.eventDetailsMap[key] = string
         self.textData = textData.filter {!$0.isSelected}
         self.parsePosition += 1
-        self.eventDetailsMap[key] = self.currentText
-        self.currentText = ""
-        
         guard parsePosition > 6 else {
             self.eventDataTableView.reloadData()
             return
         }
         
         
-        //            self.performSegue(withIdentifier: "toDetailView", sender: self)
         self.parsePosition = 0
         self.inputText = nil
         self.textData = []
         self.dismiss(animated: true) {
+            let dayFormatterPrint = DateFormatter()
+            dayFormatterPrint.dateFormat = "dd"
+            
+            let yearFormatterPrint = DateFormatter()
+            yearFormatterPrint.dateFormat = "yyyy"
+            
+            let monthFormatterPrint = DateFormatter()
+            monthFormatterPrint.dateFormat = "MM"
+            
+            let timeFormatterPrint = DateFormatter()
+            timeFormatterPrint.dateFormat = "HH:mm"
+            
             let name = self.eventDetailsMap["name"] ?? ""
-            let day = self.eventDetailsMap["day"] ?? ""
-            let month = self.eventDetailsMap["month"]  ?? ""
-            let year = self.eventDetailsMap["year"] ?? ""
-            let time = self.eventDetailsMap["time"] ?? ""
+            var day = self.eventDetailsMap["day"] ?? dayFormatterPrint.string(from: Date())
+            var month = self.eventDetailsMap["month"]  ?? monthFormatterPrint.string(from: Date())
+            var year = self.eventDetailsMap["year"] ?? yearFormatterPrint.string(from: Date())
+            var time = self.eventDetailsMap["time"] ?? timeFormatterPrint.string(from: Date())
+            if day.isEmpty {
+                day = dayFormatterPrint.string(from: Date())
+            }
+            if month.isEmpty {
+                month = monthFormatterPrint.string(from: Date())
+            }
+            if year.isEmpty {
+                year = yearFormatterPrint.string(from: Date())
+            }
+            if time.isEmpty {
+                time = timeFormatterPrint.string(from: Date())
+            }
             let location = self.eventDetailsMap["location"] ?? ""
             let otherDetails = self.eventDetailsMap["other"] ?? ""
             DetailViewController.event = Event(name: name, location: location, day: day, time: time, year: year, month: month, detail: otherDetails)
@@ -195,8 +225,8 @@ extension EventDataViewController: UITableViewDataSource {
         let data = textData[indexPath.row]
         data.isSelected = true
         cell.accessoryType = .checkmark
-        self.currentText += " " + data.text
-        self.currentText = self.currentText.trimmingCharacters(in: CharacterSet.whitespaces)
+//        self.currentText += " " + data.text
+//        self.currentText = self.currentText.trimmingCharacters(in: CharacterSet.whitespaces)
         return indexPath
     }
     
@@ -205,8 +235,8 @@ extension EventDataViewController: UITableViewDataSource {
         let data = textData[indexPath.row]
         data.isSelected = false
         cell.accessoryType = .none
-        guard let endIndex = self.currentText.lastIndex(of: " ") else {return indexPath}
-        self.currentText = String(self.currentText[self.currentText.startIndex..<endIndex])
+//        guard let endIndex = self.currentText.lastIndex(of: " ") else {return indexPath}
+//        self.currentText = String(self.currentText[self.currentText.startIndex..<endIndex])
         return indexPath
     }
     
