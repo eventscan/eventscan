@@ -22,8 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ctransparent_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-1y-3o0">
-                                <rect key="frame" x="93" y="304" width="207" height="207"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ctransparent_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-1y-3o0">
+                                <rect key="frame" x="92.999999999999986" y="304" width="207.00000000000003" height="207"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlZ-nY-vLH">
                                 <rect key="frame" x="103.5" y="518.5" width="207" height="26"/>
@@ -55,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ctransparent_logo.png" width="102.66666412353516" height="100"/>
+        <image name="ctransparent_logo" width="103" height="100"/>
     </resources>
 </document>

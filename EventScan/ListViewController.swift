@@ -190,6 +190,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
                 if (granted) && (error == nil) {
+                    if (eventStore.event(withIdentifier: identifier) == nil) {
+                        completion?(false, nil)
+                        return
+                        
+                    }
+                    
                     let event: EKEvent = eventStore.event(withIdentifier: identifier)!
                     do {
                         try eventStore.remove(event, span: .thisEvent)
