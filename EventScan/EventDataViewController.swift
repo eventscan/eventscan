@@ -48,8 +48,15 @@ class EventDataViewController: UIViewController {
         
         for line in inputText.split(separator: "\n") {
             for word in String(line).split(separator: " ") {
-                let data = EventData(text: String(word))
-                textData.append(data)
+                if word.contains("-") {
+                    let components = word.split(separator: "-")
+                    for component in components {
+                        self.textData.append(EventData(text: String(component)))
+                    }
+                } else {
+                    self.textData.append(EventData(text: String(word)))
+                }
+                
                 
             }
         }

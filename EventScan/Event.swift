@@ -60,9 +60,16 @@ struct Event {
 
             } else if self.time.contains("PM") {
                 var timeString = String(self.time[self.time.startIndex..<self.time.index(of: "P")!])
-                timeString = String(Int(timeString)! + 12)
+                if !timeString.isEmpty {
+                    if !timeString.contains(":") {
+                        timeString = String(Int(timeString)! + 12)
+                    } else {
+                        let compoenents = timeString.split(separator: ":")
+                        timeString = String(Int(compoenents[0])! + 12)
+                        timeString += ":" + compoenents[1]
+                    }
+                }
                 valueString += timeString
-
             } else {
                 valueString += self.time
             }
