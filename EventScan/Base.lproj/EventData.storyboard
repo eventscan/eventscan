@@ -76,7 +76,7 @@
                         <viewLayoutGuide key="safeArea" id="qZP-5v-1ag"/>
                     </view>
                     <navigationItem key="navigationItem" id="QRk-Ih-dUI">
-                        <barButtonItem key="leftBarButtonItem" title="Prevous" id="nCz-pw-hkJ">
+                        <barButtonItem key="leftBarButtonItem" title="Previous" id="nCz-pw-hkJ">
                             <connections>
                                 <action selector="previousButtonPressed:" destination="zGY-2G-wNg" id="Y3c-oh-bKZ"/>
                             </connections>

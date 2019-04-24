@@ -18,7 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IMG_0013" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-1y-3o0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="wdZ-1Q-AyP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="transparent_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dvj-1y-3o0">
                                 <rect key="frame" x="93" y="304" width="207" height="207"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Scan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlZ-nY-vLH">
@@ -31,10 +34,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dvj-1y-3o0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.9" id="1B0-C9-NDt"/>
+                            <constraint firstItem="wdZ-1Q-AyP" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="8d4-Mo-8YB"/>
+                            <constraint firstItem="wdZ-1Q-AyP" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="9Aq-gw-h1L"/>
                             <constraint firstItem="rlZ-nY-vLH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WhJ-Gn-DzW"/>
+                            <constraint firstItem="wdZ-1Q-AyP" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="Xvo-ey-SoZ"/>
                             <constraint firstItem="rlZ-nY-vLH" firstAttribute="width" secondItem="Dvj-1y-3o0" secondAttribute="width" id="pBo-pz-izQ"/>
                             <constraint firstItem="Dvj-1y-3o0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.95" id="qFV-by-d00"/>
                             <constraint firstItem="Dvj-1y-3o0" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="vqP-ho-AOu"/>
+                            <constraint firstItem="wdZ-1Q-AyP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wjb-xE-2h8"/>
                             <constraint firstItem="Dvj-1y-3o0" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="xHz-Vm-Ns2"/>
                             <constraint firstItem="rlZ-nY-vLH" firstAttribute="top" secondItem="Dvj-1y-3o0" secondAttribute="bottom" constant="7.5" id="ys9-vX-lor"/>
                         </constraints>
@@ -47,6 +54,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0013" width="60" height="60"/>
+        <image name="background" width="100" height="100"/>
+        <image name="transparent_logo.png" width="102.66666412353516" height="100"/>
     </resources>
 </document>
