@@ -120,3 +120,6 @@ Note, it may take a couple seconds for the gif to appear may take a couple secon
 #### Sprint 3
 
 <a href="https://github.com/eventscan/eventscan/blob/master/RPReplay_Final1555278800.MP4.zip"> Link for Detail View Feature </a>
+
+#### Final Sprint
+<video src="https://github.com/eventscan/eventscan/blob/master/RPReplay_Final1555278800.MP4.zip" width="320" height="200" controls preload></video>
