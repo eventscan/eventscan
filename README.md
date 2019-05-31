@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Overview](#Overview)
+1. [Event Scan Function Summarization](#Event-Scan-Function-Summarization)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 1. [Schema](#Schema)
@@ -16,6 +17,50 @@ Use the Captured Image and OCR library to Scan information, and create event on 
    - **Market:** Anyone use camera to store detailed information about the event. 
    - **Habit:** Users can create event throughout capturing the image or directly entering the information.
    - **Scope:** Capturing image, scanning the words from the image, manipulate the information, create the event. 
+   
+## Event-Scan-Function-Summarization
+### Camera View Controller:
+1.	Importing AVFoundation for displaying live camera preview on the Safe Area
+2.	When the middle button clicked 
+      * 	current image of the preview captured for display on UIImageView 
+      * 	starts parsing through Vision Helper struct
+3.	When parsing is completed 
+      * 	clear and confirm button appears
+4.	When clear button clicked 
+      * 	clear and confirm button become invisible 
+      * 	image is removed form UIImageView
+4.	When confirm button clicked
+      * 	parsed data is transferred into the EventDataViewController
+      * 	the new screen appears for selection
+### Vision Helper struct:
+1.	create textRecognizer through Firebase and FirebaseMLCommon
+2.	fix the rotation of the image
+3.	change the image to the VisionImage for calculation
+4.	process the VisionImage through textRecognizer
+5.	return the text part of the result
+### Event Data View Controller:
+#### All the data handling is done through Array of Array of EventData Object
+1.	If Previous Bar Button clicked, it goes back to the previous selection or dismiss the screen if not possible
+1.	If Next Bar Button clicked, it goes forward to the previous selection, or dismiss the screen if not possible
+      * 	If dismiss the screen:
+            * transfer the final data as an struct to the detail screen
+            * activate the static data in DetailViewController for recognition of data source
+### Detail View Controller:
+1.	If data source is camera or list view:
+      * 	it fills in the field according to the received data
+2.	If cancel button is clicked:
+      * 	it resets all the fields to its original state
+      * 	returns to the data source if it exists.
+2.	If confirm button is clicked:
+      * 	it resets all the fields to its original state 
+      * 	save the entered data into the CoreData
+      * 	create event on calendar through EventKit or edits event if event already exist
+      * 	transfers to the list view
+3.	Resets all the data for data source
+### List View Controller:
+1.	Creates each cell for display based on data in CoreData
+2.	If any cell selected transfers selected row to the Detail View for editing
+3.	Transfers to the detail view   
    
 ## Product-Spec
 ### 1. User Stories (Required and Optional)
@@ -123,3 +168,6 @@ Note, it may take a couple seconds for the gif to appear may take a couple secon
 
 #### Final Sprint
 <a href="https://github.com/eventscan/eventscan/blob/master/Final%20Recording.mp4"> Link for Final Replay Video </a>
+
+
+
