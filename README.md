@@ -118,9 +118,6 @@ Use the Captured Image and OCR library to Scan information, and create event on 
 ## Wireframe
 <img src='prototype.jpeg' title='Wireframe'><br>
 
-<img src='https://github.com/eventscan/eventscan/files/3052132/IMG_3567.jpeg.MOV.zip' title='Camera Video Walkthrough' width='' alt='Video Walkthrough' />
-
-
 ## Schema 
 ### Models
 #### Event
@@ -167,7 +164,6 @@ Note, it may take a couple seconds for the gif to appear may take a couple secon
 <a href="https://github.com/eventscan/eventscan/blob/master/RPReplay_Final1555278800.MP4.zip"> Link for Detail View Feature </a>
 
 #### Final Sprint
+<img src='./gifs/Final%20Recording.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <a href="https://github.com/eventscan/eventscan/blob/master/Final%20Recording.mp4"> Link for Final Replay Video </a>
-
-
 
